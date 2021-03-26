@@ -1,0 +1,68 @@
+<div class="user-list-content">
+    <div class="user-content">
+
+        <div class="user-list-header base-container">
+            Користувачі
+        </div>
+
+        <div *ngFor="let user of users"
+            class="user-form-section base-container">
+
+            <div class="user-con-text">
+                <div class="user-con-1">
+                    <div class="user-text">
+                        <div class="user-password">
+                            Логін:
+                        </div>
+
+                        <div class="user-tt">
+                            {{ user.login }}
+                        </div>
+                    </div>
+
+                    <div class="user-text">
+                        <div class="user-id">
+                            Ідентифікатор:
+                        </div>
+
+                        <div class="user-tt">
+                            {{ user.id }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="user-con-2">
+                    <div class="user-text">
+                        <div class="user-password">
+                            Пароль:
+                        </div>
+
+                        <div class="user-tt">
+                            {{ user.password }}
+                        </div>
+                    </div>
+
+                    <div class="user-text">
+                        <div class="user-type">
+                            Тип:
+                        </div>
+
+                        <div class="user-tt">
+                            {{ userTypes[user.userRole] }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bt">
+                <button
+                    (click)="deleteUser(user.id)"
+                    class="delete-user">
+
+                    Видалити користувача
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+

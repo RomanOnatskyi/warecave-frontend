@@ -1,0 +1,52 @@
+<div class="page-content">
+    <div class="visits-list">
+        <div *ngFor="let visit of anomalyVisits"
+            class="visits-list-item base-container">
+
+            <div class="visit-content">
+
+                <h4 class="visit-header">
+                    <span>Відвідування №{{ visit.VisitId }}</span>
+
+                    <button (click)="deleteVisit(visit.VisitId)" class="delete-visit-button">Видалити</button>
+                </h4>
+
+                <div class="customer-data-section">
+                    <div>
+                        <span class="data-header">Ідентифікатор покупця:</span> {{ visit.CustomerId }}
+                    </div>
+
+                    <div>
+                        <span class="data-header">Рік народження покупця:</span> {{ visit.BirthYear }}
+                    </div>
+
+                    <div>
+                        <span class="data-header">Стать покупця:</span> {{ genders[visit.Gender] }}
+                    </div>
+                </div>
+
+                <div class="shopping-list-section">
+
+                    <div class="shopping-list-header">
+                        <div class="list-element">Час</div>
+                        <div class="list-element">Назва товару</div>
+                        <div class="list-element">Дія</div>
+                    </div>
+
+                    <div class="shopping-list">
+
+                        <div *ngFor="let data of visit.Data">
+                            <hr>
+
+                            <div class="shopping-list-item">
+                                <div class="list-element">{{ data.Time | date:'hh:mm:ss' }}</div>
+                                <div class="list-element">{{ data.Name }}</div>
+                                <div class="list-element">{{ data.Action }}</div>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>

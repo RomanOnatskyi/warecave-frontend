@@ -1,0 +1,59 @@
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 100px;
+    height: 50%;
+    width: 100%;
+}
+
+.chart-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+    width: 1000px;
+}
+
+.chart {
+    height: 100%;
+    width: 100%;
+}
+
+.chart-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.chart-form-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 25%;
+}
+
+.chart-form-item input, .chart-form-item select {
+    height: 30px;
+}
+
+.chart-form-submit-item {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.chart-form-submit-item button {
+    border-radius: 5px;
+    background: #535050;
+    width: 20%;
+    height: 30px;
+    font-size: 15px;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.chart-form-submit-item button:hover {
+    background: #7C7979;
+}

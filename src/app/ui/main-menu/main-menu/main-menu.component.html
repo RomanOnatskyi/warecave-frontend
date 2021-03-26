@@ -1,0 +1,75 @@
+<div class="main-menu">
+    <div class="main-menu-content">
+
+        <button *ngIf="currentUser == userRole.Analyst"
+            class="main-menu-button"
+            [ngClass]="{ active: currentPage == pages.Products }"
+            (click)="appStateService.appState.currentPage = pages.Products"
+            routerLink="/products">
+
+            <a>Товари</a>
+        </button>
+
+        <button *ngIf="currentUser == userRole.Analyst"
+            class="main-menu-button"
+            [ngClass]="{ active: currentPage == pages.SellsChart }"
+            (click)="appStateService.appState.currentPage = pages.SellsChart"
+            routerLink="/sells-chart">
+
+            <a>Графік продаж</a>
+        </button>
+
+        <button *ngIf="currentUser == userRole.Analyst"
+            class="main-menu-button"
+            [ngClass]="{ active: currentPage == pages.AnomalyVisits }"
+            (click)="appStateService.appState.currentPage = pages.AnomalyVisits"
+            routerLink="/anomaly-visits">
+
+            <a>Аномалії</a>
+        </button>
+
+        <button *ngIf="currentUser == userRole.StoreAdmin"
+            class="main-menu-button"
+            [ngClass]="{ active: currentPage == pages.UserList }"
+            (click)="appStateService.appState.currentPage = pages.UserList"
+            routerLink="/user-list">
+
+            <a>Список користувачів</a>
+        </button>
+
+        <button *ngIf="currentUser == userRole.StoreAdmin"
+            class="main-menu-button"
+            [ngClass]="{ active: currentPage == pages.Registration }"
+            (click)="appStateService.appState.currentPage = pages.Registration"
+            routerLink="/auth/sign-up">
+
+            <a>Реєстрація користувача</a>
+        </button>
+
+        <button class="main-menu-button">
+            <a>Як користуватися</a>
+        </button>
+    </div>
+
+    <div *ngIf="currentUser == userRole.Unauthorized"
+         class="profile-section">
+
+        <button class="authorization-menu-button"
+            [ngClass]="{ active: currentPage == pages.Authentication }"
+            (click)="appStateService.appState.currentPage = pages.Authentication"
+            routerLink="/auth/sign-in">
+
+            <a class="authorization-items">Вхід</a>
+        </button>
+    </div>
+
+    <div *ngIf="currentUser != userRole.Unauthorized"
+         class="profile-section">
+
+        <button class="authorization-menu-button"
+            (click)="refreshPage()">
+
+            <a class="authorization-items">Вийти</a>
+        </button>
+    </div>
+</div>

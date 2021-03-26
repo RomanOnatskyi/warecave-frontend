@@ -1,0 +1,36 @@
+html, body, app-root {
+    min-height: 100%;
+    min-width: 820px;
+    margin: 0;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+app-header, app-footer {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+}
+
+/* pages content */
+app-main, app-sign-up, app-sign-in, app-products, app-anomaly-visits, app-sells-chart, app-user-list {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    align-items: center;
+}
+
+app-main-menu {
+    position: sticky;
+    top: 0;
+}
+
+button {
+    border: none;
+}
+
+button:focus {
+    outline: none;
+}

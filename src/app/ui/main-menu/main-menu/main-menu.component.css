@@ -1,0 +1,77 @@
+.main-menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #7C7979;
+    height: 50px;
+    box-shadow: 0 1px 5px #000000;
+}
+
+.main-menu-content {
+    display: flex;
+    flex: 1 1 60%;
+    justify-content: center;
+    margin-left: 4em;
+}
+
+.main-menu-button {
+    background: none;
+    color: #FFFFFF;
+    font-size: 12pt;
+    min-width: 100px;
+    flex: 1;
+    cursor: pointer;
+    height: 50px;
+}
+
+.main-menu-button:hover{
+    background: #faf4e7;
+}
+
+.main-menu-button:hover a{
+    color: #535050;
+}
+
+.profile-section {
+    display: flex;
+    flex: 3 3 20%;
+    justify-content: center;
+    color: #FFFFFF;
+}
+
+.pro-file{
+    padding-right: 100px;
+    padding-left: 50px;
+}
+
+.authorization-items {
+    margin-left: 20px;
+}
+
+.authorization-menu-button{
+    background: none;
+    font-size: 12pt;
+    min-width: 100px;
+    padding-right: 20px;
+    cursor: pointer;
+    height: 50px;
+}
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.authorization-menu-button:hover{
+    background: #faf4e7;
+}
+
+.authorization-menu-button:hover a{
+    color: #535050;
+}
+
+.active {
+    background: #3b3b3b;
+    pointer-events: none;
+}
