@@ -17,7 +17,6 @@ export class AppComponent implements OnInit {
     ngOnInit() {
 
         this.currentUrl = this.router.url;
-        console.log("this.currentUrl =", this.currentUrl);
     }
 
     currentUrl: string;

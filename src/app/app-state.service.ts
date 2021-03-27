@@ -23,9 +23,8 @@ export class AppState {
 export enum UserRole {
 
     Unauthorized = 0,
-    Analyst = 1,
-    StoreAdmin = 2,
-    SystemAdmin = 3,
+    Entrepreneur = 1,
+    Admin = 2,
 }
 
 export enum Pages {
