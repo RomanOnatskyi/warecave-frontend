@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AppStateService, Pages } from '../../../../app-state.service';
+import { AppStateService, Pages, UserRole } from '../../../../app-state.service';
 import { AuthService } from '../auth.service';
 import { AuthResponse } from '../../../../responses/auth-response';
 import { SignInUser } from '../users';
@@ -29,6 +29,7 @@ export class SignInComponent {
     processing: boolean = false;
     authError: string = null;
     pages = Pages;
+    userRole = UserRole;
 
     submit() {
 
@@ -48,19 +49,17 @@ export class SignInComponent {
             return;
         }
 
-        console.log('response.token =', response.token);
-        console.log('response.roleId =', response.roleId);
-
         this.appStateService.appState.userToken = response.token || '';
         this.appStateService.appState.currentUser = response.roleId;
+        this.appStateService.appState.hasUnreadNotifications = response.hasUnreadNotifications;
 
-        if (response.roleId == 1 && this.appStateService.appState.userToken != '') {
+        if (response.roleId == this.userRole.Entrepreneur && this.appStateService.appState.userToken != '') {
 
-            this.appStateService.appState.currentPage = this.pages.Products;
+            this.appStateService.appState.currentPage = this.pages.Premises;
             this.router.navigateByUrl('products');
         }
 
-        if (response.roleId == 2 && this.appStateService.appState.userToken != '') {
+        if (response.roleId == this.userRole.Admin && this.appStateService.appState.userToken != '') {
 
             this.appStateService.appState.currentPage = this.pages.UserList;
             this.router.navigateByUrl('user-list');

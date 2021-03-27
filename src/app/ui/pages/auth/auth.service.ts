@@ -20,14 +20,14 @@ export class AuthService {
 
     signUp(user: SignUpUser) {
 
-        if (user.userRole == UserRole.Analyst) {
+        if (user.userRole == UserRole.Entrepreneur) {
 
             return this.http.post<AuthResponse>(`${this.appState.baseUrl}/sign-up/analyst`, user).pipe(
                 catchError(HandleError<AuthResponse>('Signing up')),
             );
         }
 
-        if (user.userRole == UserRole.StoreAdmin) {
+        if (user.userRole == UserRole.Admin) {
 
             return this.http.post<AuthResponse>(`${this.appState.baseUrl}/sign-up/store-admin`, user).pipe(
                 catchError(HandleError<AuthResponse>('Signing up')),

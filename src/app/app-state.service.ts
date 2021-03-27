@@ -18,6 +18,7 @@ export class AppState {
     userToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIwLCJpYXQiOjE2MDcwMTk3MzB9.UYCTHHTfrNN_9lDHnpGDvQ6Ldb1xWTjUKMshdmKwUaY";
     storeId: number = 1;
     currentPage: Pages;
+    hasUnreadNotifications: boolean;
 }
 
 export enum UserRole {
@@ -25,13 +26,17 @@ export enum UserRole {
     Unauthorized = 0,
     Entrepreneur = 1,
     Admin = 2,
+
+    StoreAdmin = 3,
+    SystemAdmin = 3,
+    Analyst = 3,
 }
 
 export enum Pages {
 
     Authentication,
     Registration,
-    Products,
+    Premises,
     SellsChart,
     AnomalyVisits,
     UserList,
