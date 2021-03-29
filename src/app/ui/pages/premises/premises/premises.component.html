@@ -35,7 +35,7 @@
                         <td>{{ premise.area || "–" }}</td>
                         <td>{{ premise.address || "–" }}</td>
                         <td>{{ premise.rentAmount || "–" }}</td>
-                        <td>{{ premise.subrenterId || "–" }}</td>
+                        <td>{{ premise.subrenterLogin || "–" }}</td>
                         <td>{{ premise.annotation || "–" }}</td>
                         <td>{{ premise.temperature || "–" }}</td>
                         <td>{{ premise.relativeHumidity || "–" }}</td>
@@ -83,10 +83,10 @@
                         </td>
 
                         <td>
-                            <ng-select [items]="people"
-                                bindLabel="name"
+                            <ng-select [items]="subrenters"
+                                bindLabel="login"
                                 bindValue="id"
-                                [(ngModel)]="selectedPersonId">
+                                [(ngModel)]="editedPremise.subrenterId">
                             </ng-select>
                         </td>
 

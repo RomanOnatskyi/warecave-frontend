@@ -5,6 +5,7 @@ import { catchError } from 'rxjs/operators';
 import { HandleError } from '../../../handle-error';
 import { Premise, PremisesResponse } from '../../../responses/premise-response';
 import { BaseResponse } from '../../../responses/base-response';
+import { SubrentersResponse } from '../../../responses/subrenter-response';
 
 @Injectable({
     providedIn: 'root',
@@ -25,6 +26,15 @@ export class PremisesService {
 
         return this.http.get<PremisesResponse>(`${this.appState.baseUrl}/premise/${this.appState.renterId}`, { headers }).pipe(
             catchError(HandleError<PremisesResponse>('Getting premises')),
+        );
+    }
+
+    getSubrenters() {
+
+        const headers = new HttpHeaders({ 'authorization': this.appState.userToken });
+
+        return this.http.get<SubrentersResponse>(`${this.appState.baseUrl}/users/subrenters`, { headers }).pipe(
+            catchError(HandleError<SubrentersResponse>('Getting subrenters')),
         );
     }
 

@@ -2,6 +2,7 @@ import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { PremisesService } from '../premises.service';
 import { AppStateService } from '../../../../app-state.service';
 import { Premise } from '../../../../responses/premise-response';
+import { Subrenter } from '../../../../responses/subrenter-response';
 
 @Component({
     selector: 'app-premises',
@@ -13,45 +14,36 @@ export class PremisesComponent implements OnInit {
     @ViewChild('readOnlyTemplate', { static: false }) readOnlyTemplate: TemplateRef<any>;
     @ViewChild('editTemplate', { static: false }) editTemplate: TemplateRef<any>;
 
-    editedPremise: Premise;
     premises: Premise[];
+    subrenters: Subrenter[];
+    editedPremise: Premise;
     isNewRecord: boolean;
-
-    selectedPersonId: string;
-    people = [
-        {
-            'id': '5a15b13c36e7a7f00cf0d7cb',
-            'name': 'Karyn Wright',
-        },
-        {
-            'id': '5a15b13c2340978ec3d2c0ea',
-            'name': 'Rochelle Estes',
-        },
-        {
-            'id': '5a15b13c663ea0af9ad0dae8',
-            'name': 'Mendoza Ruiz'
-        }
-    ];
 
     constructor(
         private appStateService: AppStateService,
         private premisesService: PremisesService,
     ) {}
 
-    ngOnInit() {
+    async ngOnInit() {
 
-        this.loadPremises();
+        this.premises = await this.loadPremises();
+        this.subrenters = await this.loadSubrenters();
     }
 
     get appState() { return this.appStateService.appState; }
 
-    private loadPremises() {
+    private async loadPremises() {
 
-        this.premisesService.getPremises()
-            .subscribe(response => {
+        let response = await this.premisesService.getPremises().toPromise();
 
-                this.premises = response.premises;
-            });
+        return response.premises;
+    }
+
+    private async loadSubrenters() {
+
+        let response = await this.premisesService.getSubrenters().toPromise();
+
+        return response.subrenters;
     }
 
     addPremise() {
@@ -72,7 +64,6 @@ export class PremisesComponent implements OnInit {
     }
 
     editPremise(premise: Premise) {
-
         this.editedPremise = new Premise(
             premise.premiseId,
             premise.name,
@@ -91,19 +82,20 @@ export class PremisesComponent implements OnInit {
         return this.editedPremise && this.editedPremise.premiseId === premise.premiseId;
     }
 
-    savePremise() {
+    async savePremise() {
         if (this.isNewRecord) {
 
-            this.premisesService.createPremise(this.editedPremise).subscribe(data => this.loadPremises());
+            await this.premisesService.createPremise(this.editedPremise).toPromise();
+            this.premises = await this.loadPremises();
 
             this.isNewRecord = false;
             this.editedPremise = null;
-        }
-        else {
+        } else {
 
-            this.premisesService.updatePremise(this.editedPremise).subscribe(data => this.loadPremises());
-
+            await this.premisesService.updatePremise(this.editedPremise).toPromise();
             this.editedPremise = null;
+
+            this.premises = await this.loadPremises();
         }
     }
 

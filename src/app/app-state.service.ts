@@ -15,7 +15,7 @@ export class AppState {
     baseUrl = "http://192.168.0.106:3300/api";
 
     currentUser: UserRole = UserRole.Unauthorized;
-    userToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIwLCJpYXQiOjE2MDcwMTk3MzB9.UYCTHHTfrNN_9lDHnpGDvQ6Ldb1xWTjUKMshdmKwUaY";
+    userToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTYxNTMwOTUwMX0.-l5s_cKlmMW-4-Ncd8ZrOc1r-5JFzet-JznhidjTy-M";
     renterId: number = 1;
     currentPage: Pages;
     hasUnreadNotifications: boolean;

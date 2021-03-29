@@ -33,8 +33,6 @@ export class SellsChartComponent implements OnInit {
 
         this.dataForGettingStatistics.dateFrom = this.getCurrentDateAsString();
         this.dataForGettingStatistics.dateTo = this.getCurrentDateAsString();
-        // this.dataForGettingStatistics.dateFrom = "2020-11-22";
-        // this.dataForGettingStatistics.dateTo = "2020-12-09";
 
         this.allProducts = await this.loadProducts();
 
