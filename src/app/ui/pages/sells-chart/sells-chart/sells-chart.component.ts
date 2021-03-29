@@ -6,8 +6,8 @@ import { SellsChartService } from '../sells-chart.service';
 import { ChartData } from '../../../../responses/sells-chart-response';
 import { DataForGettingStatistics } from '../request';
 import { AppStateService } from '../../../../app-state.service';
-import { Product } from '../../../../responses/product-response';
-import { ProductsService } from '../../products/products.service';
+import { Premise } from '../../../../responses/premise-response';
+import { PremisesService } from '../../premises/premises.service';
 
 @Component({
     selector: 'app-sells-chart',
@@ -19,12 +19,12 @@ export class SellsChartComponent implements OnInit {
     constructor(
         private appStateService: AppStateService,
         private sellsChartService: SellsChartService,
-        private productsService: ProductsService,
+        private productsService: PremisesService,
     ) {}
 
     get appState() { return this.appStateService.appState; }
 
-    allProducts: Product[];
+    allProducts: Premise[];
     dataForGettingStatistics: DataForGettingStatistics = new DataForGettingStatistics();
     chartPoints: ChartData[];
     sellsChart: Chart = [];
@@ -38,16 +38,16 @@ export class SellsChartComponent implements OnInit {
 
         this.allProducts = await this.loadProducts();
 
-        this.dataForGettingStatistics.goodId = this.allProducts[0].productId;
+        this.dataForGettingStatistics.goodId = this.allProducts[0].premiseId;
 
         this.sellsChart = this.getLineChart();
     }
 
     private async loadProducts() {
 
-        let response = await this.productsService.getProducts().toPromise();
+        let response = await this.productsService.getPremises().toPromise();
 
-        return response.products;
+        return response.premises;
     }
 
     private getLineChart() {
@@ -92,7 +92,7 @@ export class SellsChartComponent implements OnInit {
 
     async getChartData() {
 
-        this.dataForGettingStatistics.storeId = this.appState.storeId;
+        this.dataForGettingStatistics.storeId = this.appState.renterId;
 
         this.chartPoints = await this.getChartPoints(this.dataForGettingStatistics);
 

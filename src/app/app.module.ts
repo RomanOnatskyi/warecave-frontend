@@ -11,7 +11,7 @@ import { MainModule } from './ui/pages/main/main.module';
 import { AuthModule } from './ui/pages/auth/auth.module';
 import { MainMenuModule } from './ui/main-menu/main-menu.module';
 import { SellsChartModule } from './ui/pages/sells-chart/sells-chart.module';
-import { ProductsModule } from './ui/pages/products/products.module';
+import { PremisesModule } from './ui/pages/premises/premises.module';
 import { AnomalyVisitsModule } from './ui/pages/anomaly-visits/anomaly-visits.module';
 import { UserListModule } from './ui/pages/user-list/user-list.module';
 
@@ -24,13 +24,15 @@ import { UserListModule } from './ui/pages/user-list/user-list.module';
         FormsModule,
         BrowserModule,
         AppRoutingModule,
+
         HeaderModule,
         FooterModule,
         MainModule,
+
         AuthModule,
         MainMenuModule,
         SellsChartModule,
-        ProductsModule,
+        PremisesModule,
         AnomalyVisitsModule,
         UserListModule,
     ],

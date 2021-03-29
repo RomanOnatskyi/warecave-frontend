@@ -12,11 +12,11 @@ export class AppStateService {
 
 export class AppState {
 
-    baseUrl = "http://localhost:3300/api";
+    baseUrl = "http://192.168.0.106:3300/api";
 
     currentUser: UserRole = UserRole.Unauthorized;
     userToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIwLCJpYXQiOjE2MDcwMTk3MzB9.UYCTHHTfrNN_9lDHnpGDvQ6Ldb1xWTjUKMshdmKwUaY";
-    storeId: number = 1;
+    renterId: number = 1;
     currentPage: Pages;
     hasUnreadNotifications: boolean;
 }
@@ -24,8 +24,8 @@ export class AppState {
 export enum UserRole {
 
     Unauthorized = 0,
-    Entrepreneur = 1,
-    Admin = 2,
+    Admin = 1,
+    Entrepreneur = 2,
 
     StoreAdmin = 3,
     SystemAdmin = 3,

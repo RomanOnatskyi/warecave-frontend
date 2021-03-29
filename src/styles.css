@@ -15,7 +15,7 @@ app-header, app-footer {
 }
 
 /* pages content */
-app-main, app-sign-up, app-sign-in, app-products, app-anomaly-visits, app-sells-chart, app-user-list {
+app-main, app-sign-up, app-sign-in, app-premises, app-anomaly-visits, app-sells-chart, app-user-list {
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;

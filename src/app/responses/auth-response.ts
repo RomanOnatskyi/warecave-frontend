@@ -4,5 +4,6 @@ import { UserRole } from '../app-state.service';
 export class AuthResponse extends BaseResponse {
     token: string;
     roleId: UserRole;
-    hasUnreadNotifications: boolean;
+    renterId?: number;
+    hasUnreadNotifications?: boolean;
 }

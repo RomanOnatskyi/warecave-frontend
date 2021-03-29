@@ -51,12 +51,14 @@ export class SignInComponent {
 
         this.appStateService.appState.userToken = response.token || '';
         this.appStateService.appState.currentUser = response.roleId;
-        this.appStateService.appState.hasUnreadNotifications = response.hasUnreadNotifications;
 
         if (response.roleId == this.userRole.Entrepreneur && this.appStateService.appState.userToken != '') {
 
+            this.appStateService.appState.renterId = response.renterId;
+            this.appStateService.appState.hasUnreadNotifications = response.hasUnreadNotifications;
+
             this.appStateService.appState.currentPage = this.pages.Premises;
-            this.router.navigateByUrl('products');
+            this.router.navigateByUrl('premises');
         }
 
         if (response.roleId == this.userRole.Admin && this.appStateService.appState.userToken != '') {

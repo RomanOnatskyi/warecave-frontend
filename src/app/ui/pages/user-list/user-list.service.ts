@@ -23,7 +23,7 @@ export class UserListService {
 
         const headers = new HttpHeaders({ 'authorization': this.appState.userToken });
 
-        return this.http.get<UserListResponse>(`${this.appState.baseUrl}/users/${this.appState.storeId}`, { headers }).pipe(
+        return this.http.get<UserListResponse>(`${this.appState.baseUrl}/users/${this.appState.renterId}`, { headers }).pipe(
             catchError(HandleError<UserListResponse>('Getting users')),
         );
     }

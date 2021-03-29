@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
-import { ProductsComponent } from './products/products.component';
+import { PremisesComponent } from './premises/premises.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
-        ProductsComponent,
+        PremisesComponent,
     ],
     imports: [
         CommonModule,
         FormsModule,
     ],
 })
-export class ProductsModule {}
+export class PremisesModule {}

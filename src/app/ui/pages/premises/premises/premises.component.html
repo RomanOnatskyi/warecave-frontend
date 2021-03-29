@@ -1,0 +1,110 @@
+<div class="page-content">
+    <h1>Список товарів</h1>
+
+    <div>
+        <button type="button"
+            class="btn btn-default"
+            (click)="addPremise()">Додати приміщення
+        </button>
+    </div>
+
+    <div class="products-table">
+        <table class="table table-striped">
+            <thead class="table-header">
+            <tr>
+                <td>Ідентифікатор</td>
+                <td>Назва</td>
+                <td>Площа</td>
+                <td>Адреса</td>
+                <td>Вартість оденди, грн</td>
+                <td>Орендатор</td>
+                <td>Коментар</td>
+                <td></td>
+            </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let product of premises">
+                    <ng-template *ngIf="isEditMode(product); then editTemplate; else readOnlyTemplate"></ng-template>
+
+                    <ng-template #readOnlyTemplate>
+                        <td>{{ product.premiseId || "–"  }}</td>
+                        <td>{{ product.name || "–" }}</td>
+                        <td>{{ product.area || "–" }}</td>
+                        <td>{{ product.address || "–" }}</td>
+                        <td>{{ product.rentAmount || "–" }}</td>
+                        <td>{{ product.subrenterId || "–" }}</td>
+                        <td>{{ product.annotation || "–" }}</td>
+
+                        <td class="buttons">
+                            <button type="button"
+                                class="btn btn-default"
+                                (click)="editPremise(product)">Змінити
+                            </button>
+
+                            <button type="button"
+                                class="btn btn-danger delete-button"
+                                (click)="deletePremise(product.premiseId)">Видалити
+                            </button>
+                        </td>
+                    </ng-template>
+
+                    <ng-template #editTemplate>
+                        <td>
+                            {{ editedPremise.premiseId }}
+                        </td>
+
+                        <td>
+                            <input type="text"
+                                class="form-control"
+                                [(ngModel)]="editedPremise.name">
+                        </td>
+
+                        <td>
+                            <input type="number"
+                                class="form-control"
+                                [(ngModel)]="editedPremise.area">
+                        </td>
+
+                        <td>
+                            <input type="text"
+                                class="form-control"
+                                [(ngModel)]="editedPremise.address">
+                        </td>
+
+                        <td>
+                            <input type="number"
+                                class="form-control"
+                                [(ngModel)]="editedPremise.rentAmount">
+                        </td>
+
+                        <td>
+<!--                            todo drop-down list-->
+                            <input type="number"
+                                class="form-control"
+                                [(ngModel)]="editedPremise.subrenterId">
+                        </td>
+
+                        <td>
+                            <input type="text"
+                                class="form-control"
+                                [(ngModel)]="editedPremise.annotation">
+                        </td>
+
+                        <td class="buttons">
+                            <button type="button"
+                                class="btn btn-success"
+                                (click)="savePremise()">Зберегти
+                            </button>
+
+                            <button type="button"
+                                class="btn btn-warning delete-button"
+                                (click)="cancel()">Скасувати
+                            </button>
+                        </td>
+                    </ng-template>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
