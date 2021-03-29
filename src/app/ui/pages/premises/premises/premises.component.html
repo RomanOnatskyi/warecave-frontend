@@ -83,10 +83,11 @@
                         </td>
 
                         <td>
-<!--                            todo drop-down list-->
-                            <input type="number"
-                                class="form-control"
-                                [(ngModel)]="editedPremise.subrenterId">
+                            <ng-select [items]="people"
+                                bindLabel="name"
+                                bindValue="id"
+                                [(ngModel)]="selectedPersonId">
+                            </ng-select>
                         </td>
 
                         <td>
