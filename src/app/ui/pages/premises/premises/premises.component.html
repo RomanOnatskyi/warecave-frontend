@@ -17,34 +17,38 @@
                 <td>Площа</td>
                 <td>Адреса</td>
                 <td>Вартість оденди, грн</td>
-                <td>Орендатор</td>
+                <td>Суборендатор</td>
                 <td>Коментар</td>
+                <td>Температура</td>
+                <td>Вологість</td>
                 <td></td>
             </tr>
             </thead>
 
             <tbody>
-                <tr *ngFor="let product of premises">
-                    <ng-template *ngIf="isEditMode(product); then editTemplate; else readOnlyTemplate"></ng-template>
+                <tr *ngFor="let premise of premises">
+                    <ng-template *ngIf="isEditMode(premise); then editTemplate; else readOnlyTemplate"></ng-template>
 
                     <ng-template #readOnlyTemplate>
-                        <td>{{ product.premiseId || "–"  }}</td>
-                        <td>{{ product.name || "–" }}</td>
-                        <td>{{ product.area || "–" }}</td>
-                        <td>{{ product.address || "–" }}</td>
-                        <td>{{ product.rentAmount || "–" }}</td>
-                        <td>{{ product.subrenterId || "–" }}</td>
-                        <td>{{ product.annotation || "–" }}</td>
+                        <td>{{ premise.premiseId || "–"  }}</td>
+                        <td>{{ premise.name || "–" }}</td>
+                        <td>{{ premise.area || "–" }}</td>
+                        <td>{{ premise.address || "–" }}</td>
+                        <td>{{ premise.rentAmount || "–" }}</td>
+                        <td>{{ premise.subrenterId || "–" }}</td>
+                        <td>{{ premise.annotation || "–" }}</td>
+                        <td>{{ premise.temperature || "–" }}</td>
+                        <td>{{ premise.relativeHumidity || "–" }}</td>
 
                         <td class="buttons">
                             <button type="button"
                                 class="btn btn-default"
-                                (click)="editPremise(product)">Змінити
+                                (click)="editPremise(premise)">Змінити
                             </button>
 
                             <button type="button"
                                 class="btn btn-danger delete-button"
-                                (click)="deletePremise(product.premiseId)">Видалити
+                                (click)="deletePremise(premise.premiseId)">Видалити
                             </button>
                         </td>
                     </ng-template>
@@ -89,6 +93,14 @@
                             <input type="text"
                                 class="form-control"
                                 [(ngModel)]="editedPremise.annotation">
+                        </td>
+
+                        <td>
+                            {{ editedPremise.temperature || "–" }}
+                        </td>
+
+                        <td>
+                            {{ editedPremise.relativeHumidity || "–" }}
                         </td>
 
                         <td class="buttons">

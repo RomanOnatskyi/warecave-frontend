@@ -47,6 +47,8 @@ export class PremisesComponent implements OnInit {
             null,
             null,
             null,
+            null,
+            null,
         );
 
         this.premises.push(this.editedPremise);
@@ -63,6 +65,8 @@ export class PremisesComponent implements OnInit {
             premise.rentAmount,
             premise.subrenterId,
             premise.annotation,
+            premise.temperature,
+            premise.relativeHumidity,
         );
     }
 
