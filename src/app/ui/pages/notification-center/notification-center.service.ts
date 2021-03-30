@@ -33,7 +33,7 @@ export class NotificationCenterService {
 
         const headers = new HttpHeaders({ 'authorization': this.appState.userToken });
 
-        return this.http.put<BaseResponse>(`${this.appState.baseUrl}/notifications/markAsRead/${notificationId}`, { headers }).pipe(
+        return this.http.put<BaseResponse>(`${this.appState.baseUrl}/notifications/markAsRead/${notificationId}`, null, { headers }).pipe(
             catchError(HandleError<BaseResponse>('Marking notification')),
         );
     }

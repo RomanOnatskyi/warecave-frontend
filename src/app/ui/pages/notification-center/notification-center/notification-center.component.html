@@ -6,44 +6,25 @@
             <div class="visit-content">
 
                 <h4 class="visit-header">
-                    <span>Відвідування №{{ notification.VisitId }}</span>
+                    <span>Повідомлення №{{ notification.id }}</span>
 
-                    <button (click)="markNotificationAsRead(notification.id)" class="delete-visit-button">Видалити</button>
+                    <button (click)="markNotificationAsRead(notification.id)"
+                        class="delete-visit-button"
+                        [disabled]="notification.isRead">Прочитано
+                    </button>
                 </h4>
 
                 <div class="customer-data-section">
                     <div>
-                        <span class="data-header">Ідентифікатор покупця:</span> {{ notification.CustomerId }}
+                        <span class="data-header">Ідентифікатор покупця:</span> {{ notification.sendingDate }}
                     </div>
 
                     <div>
-                        <span class="data-header">Рік народження покупця:</span> {{ notification.BirthYear }}
+                        <span class="data-header">Рік народження покупця:</span> {{ notification.text }}
                     </div>
 
                     <div>
-                        <span class="data-header">Стать покупця:</span> {{ genders[notification.Gender] }}
-                    </div>
-                </div>
-
-                <div class="shopping-list-section">
-
-                    <div class="shopping-list-header">
-                        <div class="list-element">Час</div>
-                        <div class="list-element">Назва товару</div>
-                        <div class="list-element">Дія</div>
-                    </div>
-
-                    <div class="shopping-list">
-
-                        <div *ngFor="let data of notification.Data">
-                            <hr>
-
-                            <div class="shopping-list-item">
-                                <div class="list-element">{{ data.Time | date:'hh:mm:ss' }}</div>
-                                <div class="list-element">{{ data.Name }}</div>
-                                <div class="list-element">{{ data.Action }}</div>
-                            </div>
-                        </div>
+                        <span class="data-header">Стать покупця:</span> {{ notification.premiseId }}
                     </div>
                 </div>
             </div>

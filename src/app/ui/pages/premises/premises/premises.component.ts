@@ -35,7 +35,6 @@ export class PremisesComponent implements OnInit {
     private async loadPremises() {
 
         let response = await this.premisesService.getPremises().toPromise();
-
         return response.premises;
     }
 
