@@ -9,7 +9,7 @@ import { BaseResponse } from '../../../responses/base-response';
 @Injectable({
     providedIn: 'root',
 })
-export class AnomalyVisitsService {
+export class NotificationCenterService {
 
     constructor(
         private http: HttpClient,

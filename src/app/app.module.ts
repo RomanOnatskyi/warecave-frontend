@@ -12,7 +12,7 @@ import { AuthModule } from './ui/pages/auth/auth.module';
 import { MainMenuModule } from './ui/main-menu/main-menu.module';
 import { SellsChartModule } from './ui/pages/sells-chart/sells-chart.module';
 import { PremisesModule } from './ui/pages/premises/premises.module';
-import { AnomalyVisitsModule } from './ui/pages/anomaly-visits/anomaly-visits.module';
+import { NotificationCenterModule } from './ui/pages/notification-center/notification-center.module';
 import { UserListModule } from './ui/pages/user-list/user-list.module';
 
 @NgModule({
@@ -33,7 +33,7 @@ import { UserListModule } from './ui/pages/user-list/user-list.module';
         MainMenuModule,
         SellsChartModule,
         PremisesModule,
-        AnomalyVisitsModule,
+        NotificationCenterModule,
         UserListModule,
     ],
     providers: [],

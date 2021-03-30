@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { AnomalyVisitsService } from '../anomaly-visits.service';
+import { NotificationCenterService } from '../notification-center.service';
 import { AppStateService } from '../../../../app-state.service';
 import { Visit } from '../../../../responses/anomaly-visits-response';
 
 @Component({
     selector: 'app-anomaly-visits',
-    templateUrl: './anomaly-visits.component.html',
-    styleUrls: ['./anomaly-visits.component.css'],
+    templateUrl: './notification-center.component.html',
+    styleUrls: ['./notification-center.component.css'],
 })
-export class AnomalyVisitsComponent implements OnInit {
+export class NotificationCenterComponent implements OnInit {
 
     constructor(
         private appStateService: AppStateService,
-        private anomalyVisitsService: AnomalyVisitsService,
+        private anomalyVisitsService: NotificationCenterService,
     ) {}
 
     async ngOnInit() {

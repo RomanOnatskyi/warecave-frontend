@@ -57,7 +57,7 @@
             <button class="authorization-menu-button"
                 [ngClass]="{ active: currentPage == pages.NotificationCenter }"
                 (click)="appStateService.appState.currentPage = pages.NotificationCenter"
-                routerLink="/auth/sign-in">
+                routerLink="/notification-center">
 
                 <a class="authorization-items">Повідомлення
                     <span *ngIf="appStateService.appState.hasUnreadNotifications"
