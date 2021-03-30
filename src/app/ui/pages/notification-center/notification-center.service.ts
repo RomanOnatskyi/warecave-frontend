@@ -3,8 +3,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AppStateService } from '../../../app-state.service';
 import { catchError } from 'rxjs/operators';
 import { HandleError } from '../../../handle-error';
-import { AnomalyVisitsResponse } from '../../../responses/anomaly-visits-response';
+import { NotificationsResponse } from '../../../responses/notifications-response';
 import { BaseResponse } from '../../../responses/base-response';
+import { UnreadNotificationsResponse } from '../../../responses/unread-notifications-response';
 
 @Injectable({
     providedIn: 'root',
@@ -19,21 +20,30 @@ export class NotificationCenterService {
 
     get appState() { return this.appStateService.appState; }
 
-    getAnomalyVisits() {
+    getNotifications() {
 
         const headers = new HttpHeaders({ 'authorization': this.appState.userToken });
 
-        return this.http.get<AnomalyVisitsResponse>(`${this.appState.baseUrl}/anomaly-visits`, { headers }).pipe(
-            catchError(HandleError<AnomalyVisitsResponse>('Getting anomaly visits')),
+        return this.http.get<NotificationsResponse>(`${this.appState.baseUrl}/notifications/${this.appState.renterId}`, { headers }).pipe(
+            catchError(HandleError<NotificationsResponse>('Getting notifications')),
         );
     }
 
-    deleteVisit(visitId: number) {
+    markNotificationAsRead(notificationId: number) {
 
         const headers = new HttpHeaders({ 'authorization': this.appState.userToken });
 
-        return this.http.delete<BaseResponse>(`${this.appState.baseUrl}/anomaly-visits/${visitId}`, { headers }).pipe(
-            catchError(HandleError<BaseResponse>('Deleting anomaly visit')),
+        return this.http.put<BaseResponse>(`${this.appState.baseUrl}/notifications/markAsRead/${notificationId}`, { headers }).pipe(
+            catchError(HandleError<BaseResponse>('Marking notification')),
+        );
+    }
+
+    hasUserUnreadNotifications(userId: number) {
+
+        const headers = new HttpHeaders({ 'authorization': this.appState.userToken });
+
+        return this.http.get<UnreadNotificationsResponse>(`${this.appState.baseUrl}/notifications/hasUnread/${userId}`, { headers }).pipe(
+            catchError(HandleError<UnreadNotificationsResponse>('Determination unread notifications')),
         );
     }
 }

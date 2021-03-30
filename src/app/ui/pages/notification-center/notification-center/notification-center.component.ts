@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NotificationCenterService } from '../notification-center.service';
 import { AppStateService } from '../../../../app-state.service';
-import { Visit } from '../../../../responses/anomaly-visits-response';
+import { Notification } from '../../../../responses/notifications-response';
 
 @Component({
-    selector: 'app-anomaly-visits',
+    selector: 'app-notification-center',
     templateUrl: './notification-center.component.html',
     styleUrls: ['./notification-center.component.css'],
 })
@@ -12,40 +12,38 @@ export class NotificationCenterComponent implements OnInit {
 
     constructor(
         private appStateService: AppStateService,
-        private anomalyVisitsService: NotificationCenterService,
+        private notificationCenterService: NotificationCenterService,
     ) {}
 
     async ngOnInit() {
 
-        this.anomalyVisits = await this.loadAnomalyVisits();
+        this.notifications = await this.loadNotifications();
     }
 
-    anomalyVisits: Visit[];
-
-    genders = {
-        ['F']: "чоловіча",
-        ['M']: "жіноча",
-    };
+    notifications: Notification[];
 
     get appState() { return this.appStateService.appState; }
 
-    private async loadAnomalyVisits() {
+    private async loadNotifications() {
 
-        const anomalyVisitsResponse = await this.anomalyVisitsService.getAnomalyVisits().toPromise();
-        const error = [anomalyVisitsResponse.errors];
+        const notificationsResponse = await this.notificationCenterService.getNotifications().toPromise();
+        const error = [notificationsResponse.errors];
 
         this.showError(error);
 
-        return anomalyVisitsResponse.visitList;
+        return notificationsResponse.notifications;
     }
 
-    async deleteVisit(visitId: number) {
-        const response = await this.anomalyVisitsService.deleteVisit(visitId).toPromise();
+    async markNotificationAsRead(notificationId: number) {
+        const response = await this.notificationCenterService.markNotificationAsRead(notificationId).toPromise();
         const error = [response.errors];
 
         this.showError(error);
 
-        this.anomalyVisits = await this.loadAnomalyVisits();
+        this.notifications = await this.loadNotifications();
+
+        const unreadNotificationsResponse = await this.notificationCenterService.hasUserUnreadNotifications(this.appState.renterId).toPromise();
+        this.appState.hasUnreadNotifications = unreadNotificationsResponse.hasUnreadNotifications;
     }
 
     private showError(errors: string[]) {

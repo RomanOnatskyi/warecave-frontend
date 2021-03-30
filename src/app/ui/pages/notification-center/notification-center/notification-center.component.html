@@ -1,27 +1,27 @@
 <div class="page-content">
     <div class="visits-list">
-        <div *ngFor="let visit of anomalyVisits"
+        <div *ngFor="let notification of notifications"
             class="visits-list-item base-container">
 
             <div class="visit-content">
 
                 <h4 class="visit-header">
-                    <span>Відвідування №{{ visit.VisitId }}</span>
+                    <span>Відвідування №{{ notification.VisitId }}</span>
 
-                    <button (click)="deleteVisit(visit.VisitId)" class="delete-visit-button">Видалити</button>
+                    <button (click)="markNotificationAsRead(notification.id)" class="delete-visit-button">Видалити</button>
                 </h4>
 
                 <div class="customer-data-section">
                     <div>
-                        <span class="data-header">Ідентифікатор покупця:</span> {{ visit.CustomerId }}
+                        <span class="data-header">Ідентифікатор покупця:</span> {{ notification.CustomerId }}
                     </div>
 
                     <div>
-                        <span class="data-header">Рік народження покупця:</span> {{ visit.BirthYear }}
+                        <span class="data-header">Рік народження покупця:</span> {{ notification.BirthYear }}
                     </div>
 
                     <div>
-                        <span class="data-header">Стать покупця:</span> {{ genders[visit.Gender] }}
+                        <span class="data-header">Стать покупця:</span> {{ genders[notification.Gender] }}
                     </div>
                 </div>
 
@@ -35,7 +35,7 @@
 
                     <div class="shopping-list">
 
-                        <div *ngFor="let data of visit.Data">
+                        <div *ngFor="let data of notification.Data">
                             <hr>
 
                             <div class="shopping-list-item">
@@ -45,7 +45,7 @@
                             </div>
                         </div>
                     </div>
-                 </div>
+                </div>
             </div>
         </div>
     </div>
