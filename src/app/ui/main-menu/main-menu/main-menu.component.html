@@ -1,16 +1,16 @@
 <div class="main-menu">
     <div class="main-menu-content">
 
-        <button *ngIf="currentUser == userRole.Analyst"
+        <button *ngIf="currentUser == userRole.Entrepreneur"
             class="main-menu-button"
-            [ngClass]="{ active: currentPage == pages.Products }"
-            (click)="appStateService.appState.currentPage = pages.Products"
-            routerLink="/products">
+            [ngClass]="{ active: currentPage == pages.Premises }"
+            (click)="appStateService.appState.currentPage = pages.Premises"
+            routerLink="/premises">
 
             <a>Товари</a>
         </button>
 
-        <button *ngIf="currentUser == userRole.Analyst"
+        <button *ngIf="currentUser == userRole.Entrepreneur"
             class="main-menu-button"
             [ngClass]="{ active: currentPage == pages.SellsChart }"
             (click)="appStateService.appState.currentPage = pages.SellsChart"
@@ -19,7 +19,7 @@
             <a>Графік продаж</a>
         </button>
 
-        <button *ngIf="currentUser == userRole.Analyst"
+        <button *ngIf="currentUser == userRole.Entrepreneur"
             class="main-menu-button"
             [ngClass]="{ active: currentPage == pages.AnomalyVisits }"
             (click)="appStateService.appState.currentPage = pages.AnomalyVisits"
@@ -28,7 +28,7 @@
             <a>Аномалії</a>
         </button>
 
-        <button *ngIf="currentUser == userRole.StoreAdmin"
+        <button *ngIf="currentUser == userRole.Admin"
             class="main-menu-button"
             [ngClass]="{ active: currentPage == pages.UserList }"
             (click)="appStateService.appState.currentPage = pages.UserList"
@@ -37,7 +37,7 @@
             <a>Список користувачів</a>
         </button>
 
-        <button *ngIf="currentUser == userRole.StoreAdmin"
+        <button *ngIf="currentUser == userRole.Admin"
             class="main-menu-button"
             [ngClass]="{ active: currentPage == pages.Registration }"
             (click)="appStateService.appState.currentPage = pages.Registration"
@@ -51,25 +51,41 @@
         </button>
     </div>
 
-    <div *ngIf="currentUser == userRole.Unauthorized"
-         class="profile-section">
+    <div class="profile-section">
+        <div *ngIf="currentUser == userRole.Entrepreneur">
 
-        <button class="authorization-menu-button"
-            [ngClass]="{ active: currentPage == pages.Authentication }"
-            (click)="appStateService.appState.currentPage = pages.Authentication"
-            routerLink="/auth/sign-in">
+            <button class="authorization-menu-button"
+                [ngClass]="{ active: currentPage == pages.NotificationCenter }"
+                (click)="appStateService.appState.currentPage = pages.NotificationCenter"
+                routerLink="/auth/sign-in">
 
-            <a class="authorization-items">Вхід</a>
-        </button>
-    </div>
+                <a class="authorization-items">Повідомлення
+                    <span *ngIf="appStateService.appState.hasUnreadNotifications"
+                        class="label label-info">
+                        new
+                    </span>
+                </a>
+            </button>
+        </div>
 
-    <div *ngIf="currentUser != userRole.Unauthorized"
-         class="profile-section">
+        <div *ngIf="currentUser == userRole.Unauthorized">
 
-        <button class="authorization-menu-button"
-            (click)="refreshPage()">
+            <button class="authorization-menu-button"
+                [ngClass]="{ active: currentPage == pages.Authentication }"
+                (click)="appStateService.appState.currentPage = pages.Authentication"
+                routerLink="/auth/sign-in">
 
-            <a class="authorization-items">Вийти</a>
-        </button>
+                <a class="authorization-items">Вхід</a>
+            </button>
+        </div>
+
+        <div *ngIf="currentUser != userRole.Unauthorized">
+
+            <button class="authorization-menu-button"
+                (click)="refreshPage()">
+
+                <a class="authorization-items">Вийти</a>
+            </button>
+        </div>
     </div>
 </div>

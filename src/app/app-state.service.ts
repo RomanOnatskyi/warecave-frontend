@@ -37,6 +37,7 @@ export enum Pages {
     Authentication,
     Registration,
     Premises,
+    NotificationCenter,
     SellsChart,
     AnomalyVisits,
     UserList,

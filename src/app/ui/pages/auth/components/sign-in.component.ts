@@ -52,7 +52,7 @@ export class SignInComponent {
         this.appStateService.appState.userToken = response.token || '';
         this.appStateService.appState.currentUser = response.roleId;
 
-        if (response.roleId == this.userRole.Entrepreneur && this.appStateService.appState.userToken != '') {
+        if (response.roleId == this.userRole.Entrepreneur && this.appStateService.appState.userToken !== '') {
 
             this.appStateService.appState.renterId = response.renterId;
             this.appStateService.appState.hasUnreadNotifications = response.hasUnreadNotifications;
@@ -61,7 +61,7 @@ export class SignInComponent {
             this.router.navigateByUrl('premises');
         }
 
-        if (response.roleId == this.userRole.Admin && this.appStateService.appState.userToken != '') {
+        if (response.roleId == this.userRole.Admin && this.appStateService.appState.userToken !== '') {
 
             this.appStateService.appState.currentPage = this.pages.UserList;
             this.router.navigateByUrl('user-list');
