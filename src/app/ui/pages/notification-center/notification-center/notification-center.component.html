@@ -1,32 +1,23 @@
 <div class="page-content">
-    <div class="visits-list">
+    <div class="notifications-list">
         <div *ngFor="let notification of notifications"
-            class="visits-list-item base-container">
+            class="notifications-list-item base-container">
 
-            <div class="visit-content">
+            <div class="notification-content">
+                    <span>
+                        {{ notification.sendingDate | date:'dd-MM-yyyy' }}
 
-                <h4 class="visit-header">
-                    <span>Повідомлення №{{ notification.id }}</span>
+                        <span *ngIf="!notification.isRead"
+                            class="label label-info">new
+                        </span>
+                    </span>
+
+                    <span>{{ notification.text }}</span>
 
                     <button (click)="markNotificationAsRead(notification.id)"
-                        class="delete-visit-button"
+                        class="mark-as-read-button"
                         [disabled]="notification.isRead">Прочитано
                     </button>
-                </h4>
-
-                <div class="customer-data-section">
-                    <div>
-                        <span class="data-header">Ідентифікатор покупця:</span> {{ notification.sendingDate }}
-                    </div>
-
-                    <div>
-                        <span class="data-header">Рік народження покупця:</span> {{ notification.text }}
-                    </div>
-
-                    <div>
-                        <span class="data-header">Стать покупця:</span> {{ notification.premiseId }}
-                    </div>
-                </div>
             </div>
         </div>
     </div>

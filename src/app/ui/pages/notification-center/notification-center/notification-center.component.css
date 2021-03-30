@@ -13,7 +13,7 @@
     box-shadow: 0 2px 5px #000000;
 }
 
-.visits-list {
+.notifications-list {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -22,32 +22,28 @@
     font-size: 11pt;
 }
 
-.visits-list-item {
+.notifications-list-item {
     display: flex;
     flex-direction: row;
     width: 80%;
-    min-width: 760px;
-    margin-top: 5px;
-    margin-bottom: 30px;
+    min-width: 700px;
+    margin-top: 10px;
     padding: 0;
     color: #000;
 }
 
-.visit-content {
+.notification-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex: 1 1 auto;
-}
-
-.visit-header {
-    display: flex;
     justify-content: space-between;
     width: 100%;
     color: #000;
-    padding: 0 15px;
+    padding: 15px;
+    font-size: 13pt;
 }
 
-.delete-visit-button {
+.mark-as-read-button {
     border-radius: 5px;
     background: #535050;
     width: 250px;
@@ -57,49 +53,11 @@
     cursor: pointer;
 }
 
-.delete-visit-button:hover {
+.mark-as-read-button:hover {
     background: #c3bfbf;
 }
 
-.customer-data-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 10px;
-    padding: 0 15px;
-}
-
-.data-header {
-    font-weight: bold;
-}
-
-.shopping-list-section {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 auto;
-    justify-content: space-between;
-    margin-top: 50px;
-    padding-bottom: 25px;
-    background-color: #9d9898;
-}
-
-.shopping-list-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding-top: 20px;
-    font-weight: bold;
-}
-
-.shopping-list-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.list-element {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 33%;
+.mark-as-read-button:disabled {
+    background: #cdc1c1;
+    pointer-events: none;
 }
