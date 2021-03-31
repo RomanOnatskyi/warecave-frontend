@@ -14,6 +14,7 @@ import { SellsChartModule } from './ui/pages/sells-chart/sells-chart.module';
 import { PremisesModule } from './ui/pages/premises/premises.module';
 import { NotificationCenterModule } from './ui/pages/notification-center/notification-center.module';
 import { UserListModule } from './ui/pages/user-list/user-list.module';
+import { DbManagementModule } from './ui/pages/db-management/db-management.module';
 
 @NgModule({
     declarations: [
@@ -35,6 +36,7 @@ import { UserListModule } from './ui/pages/user-list/user-list.module';
         PremisesModule,
         NotificationCenterModule,
         UserListModule,
+        DbManagementModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

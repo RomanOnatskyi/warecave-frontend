@@ -1,0 +1,49 @@
+<div class="page-content">
+    <h1>Резервні копії бази даних</h1>
+
+    <div>
+        <button type="button"
+            class="btn btn-default"
+            (click)="createBackup()">Створити резервну копію
+        </button>
+    </div>
+
+    <div class="backups-table">
+        <table class="table table-striped">
+            <thead class="table-header">
+                <tr>
+                    <td>Дата</td>
+                    <td>Модель відновлення</td>
+                    <td>Створивший користувач</td>
+                    <td>Розмір копії, байт</td>
+                    <td>Пошкоджено</td>
+                    <td></td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let backup of dbBackupsData">
+                    <td>
+                        {{ backup.date | date:'dd-MM-yyyy'
+                           || "–"
+                        }}
+                    </td>
+                    <td>{{ backup.recoveryModel || "–" }}</td>
+                    <td>{{ backup.user || "–" }}</td>
+                    <td>{{ backup.backupSize || "–" }}</td>
+                    <td>
+                        {{ backup.isDamaged ? 'Так' : 'Ні'
+                           || "–"
+                        }}
+                    </td>
+                    <td class="restoring-button">
+                        <button type="button"
+                            class="btn btn-danger"
+                            (click)="restoreDatabase(backup.backupId)">Відновити базу даних
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

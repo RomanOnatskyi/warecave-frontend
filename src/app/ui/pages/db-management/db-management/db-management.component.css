@@ -1,0 +1,28 @@
+.page-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+    height: 50%;
+    width: 100%;
+    padding: 0 52px;
+}
+
+.backups-table {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.table-striped {
+    width: 80%;
+}
+
+.table-header {
+    font-weight: bold;
+}
+
+.restoring-button {
+    display: flex;
+    justify-content: center;
+}

@@ -40,6 +40,6 @@ export enum Pages {
     Premises,
     NotificationCenter,
     SellsChart,
-    AnomalyVisits,
     UserList,
+    DbManagement,
 }
