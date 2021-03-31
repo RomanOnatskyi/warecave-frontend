@@ -6,6 +6,7 @@ import { HandleError } from '../../../handle-error';
 import { Premise, PremisesResponse } from '../../../responses/premise-response';
 import { BaseResponse } from '../../../responses/base-response';
 import { SubrentersResponse } from '../../../responses/subrenter-response';
+import { NotificationsDataResponse } from '../../../responses/notifications-data-response';
 
 @Injectable({
     providedIn: 'root',
@@ -26,6 +27,15 @@ export class PremisesService {
 
         return this.http.get<PremisesResponse>(`${this.appState.baseUrl}/premise/${this.appState.renterId}`, { headers }).pipe(
             catchError(HandleError<PremisesResponse>('Getting premises')),
+        );
+    }
+
+    getNotificationData() {
+
+        const headers = new HttpHeaders({ 'authorization': this.appState.userToken });
+
+        return this.http.get<NotificationsDataResponse>(`${this.appState.baseUrl}/notifications/data/${this.appState.renterId}`, { headers }).pipe(
+            catchError(HandleError<NotificationsDataResponse>('Getting notifications data')),
         );
     }
 

@@ -108,6 +108,18 @@
                             {{ editedPremise.relativeHumidity || "–" }}
                         </td>
 
+                        <td>
+                            <input type="number"
+                                class="form-control"
+                                [(ngModel)]="editedPremise.rentDay">
+                        </td>
+
+                        <td>
+                            <input type="number"
+                                class="form-control"
+                                [(ngModel)]="editedPremise.communalDay">
+                        </td>
+
                         <td class="buttons">
                             <button type="button"
                                 class="btn btn-success"

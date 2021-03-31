@@ -34,6 +34,9 @@ export class Premise {
     subrenterLogin: string;
     temperature: number;
     relativeHumidity: number;
+
+    rentDay: number;
+    communalDay: number;
 }
 
 export class PremisesResponse extends BaseResponse {

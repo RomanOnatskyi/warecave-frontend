@@ -3,6 +3,7 @@ import { PremisesService } from '../premises.service';
 import { AppStateService } from '../../../../app-state.service';
 import { Premise } from '../../../../responses/premise-response';
 import { Subrenter } from '../../../../responses/subrenter-response';
+import { NotificationData } from '../../../../responses/notifications-data-response';
 
 @Component({
     selector: 'app-premises',
@@ -15,6 +16,7 @@ export class PremisesComponent implements OnInit {
     @ViewChild('editTemplate', { static: false }) editTemplate: TemplateRef<any>;
 
     premises: Premise[];
+    notificationData: NotificationData[];
     subrenters: Subrenter[];
     editedPremise: Premise;
     isNewRecord: boolean;
@@ -28,6 +30,10 @@ export class PremisesComponent implements OnInit {
 
         this.premises = await this.loadPremises();
         this.subrenters = await this.loadSubrenters();
+        this.notificationData = await this.loadNotificationData();
+        console.log("this.notificationData:", this.notificationData);
+
+        // todo linq here
     }
 
     get appState() { return this.appStateService.appState; }
@@ -36,6 +42,12 @@ export class PremisesComponent implements OnInit {
 
         let response = await this.premisesService.getPremises().toPromise();
         return response.premises;
+    }
+
+    private async loadNotificationData() {
+
+        let response = await this.premisesService.getNotificationData().toPromise();
+        return response.notificationsData;
     }
 
     private async loadSubrenters() {
