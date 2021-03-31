@@ -1,13 +1,12 @@
 {
-    "button": {
-        "auth": {
-            "authorization": "Вхід",
-            "registration": "Зареєструватися"
-        },
-        "premiseEditing": {
-            "edit": "Редагувати",
-            "save": "Зберегти"
-        },
+    "common": {
+        "ok": "Ок",
+        "error": "Помилка!",
+        "field-required": "Заповніть це поле!",
+        "processing": "Обробка..",
+        "edit": "Змінити",
+        "delete": "Видалити",
+        "save": "Зберегти",
         "cancel": "Скасувати"
     },
     "navigation": {
@@ -20,33 +19,94 @@
         "sign-in": "Вхід",
         "sign-out": "Вийти"
     },
-    "label": {
-        "auth": {
-            "login": "Логін",
-            "password": "Пароль"
+    "footer": {
+        "contacts": "Контакти",
+        "applications": "Додатки",
+        "rights-reserved": "всі права захищені"
+    },
+    "authorization": {
+        "header": {
+            "sign-up": "Реєстрація",
+            "sign-in": "Вхід"
         },
-        "premiseCreation": {
+        "label": {
+            "login": "Логін",
+            "password": "Пароль",
+            "repeat-password": "Повторіть пароль",
+            "user-type": "Тип користувача"
+        },
+        "validation": {
+            "login": "Перших 3 символа літери. Максимум 20 символів. Тільки літери та цифри.",
+            "password": "Пароль має містити мінімум 6 латинських літер, одну велику літеру та цифру",
+            "repeat-password": "Паролі не співпадають"
+        },
+        "button": {
+            "registration": "Зареєструватися",
+            "authorization": "Увійти"
+        },
+        "users": {
+            "entrepreneur": "Підприємець",
+            "subrenter": "Суборендатор"
+        }
+    },
+    "premises": {
+        "header": "Ваші приміщення",
+        "label": {
+            "id": "Ідентифікатор",
             "name": "Назва",
             "area": "Площа",
             "address": "Адреса",
-            "subrentAmount": "Вартість суборенди",
+            "rent": "Вартість оденди, грн",
             "subrenter": "Суборендатор",
-            "annotation": "Коментар"
+            "annotation": "Коментар",
+            "temperature": "Температура",
+            "humidity": "Вологість"
+        },
+        "validation": {
+            "login": "Перших 3 символа літери. Максимум 20 символів. Тільки літери та цифри.",
+            "password": "Пароль має містити мінімум 6 латинських літер, одну велику літеру та цифру",
+            "repeat-password": "Паролі не співпадають"
+        },
+        "button": {
+            "add-premise": "Додати приміщення",
+            "authorization": "Увійти"
+        },
+        "users": {
+            "entrepreneur": "Підприємець",
+            "subrenter": "Суборендатор"
         }
     },
-    "validation": {
-        "required": "Заповніть поле!",
-        "registration": {
-            "login": "Перших 3 символа літери. Максимум 20 символів. Тільки літери та цифри.",
-            "password": "Пароль має містити мінімум 6 латинських літер, одну велику літеру та цифру"
+    "db-management": {
+        "header": "Резервні копії бази даних",
+        "label": {
+            "date": "Дата",
+            "recovery-model": "Модель відновлення",
+            "user": "Створивший користувач",
+            "size": "Розмір копії, байт",
+            "is-damaged": "Пошкоджено"
         },
-        "premise": {
-            "name": "",
-            "area": "",
-            "address": "",
-            "subrentAmount": "",
-            "subrenter": "",
-            "annotation": ""
+        "button": {
+            "create-backup": "Створити резервну копію",
+            "restore-db": "Відновити базу даних"
         }
+    },
+    "user-list": {
+        "header": "Користувачі",
+        "label": {
+            "login": "Логін:",
+            "id": "Ідентифікатор:",
+            "password": "Пароль:",
+            "user-type": "Тип:"
+        },
+        "button": {
+            "delete-user": "Видалити користувача"
+        },
+        "users": {
+            "entrepreneur": "Підприємець",
+            "subrenter": "Суборендатор"
+        }
+    },
+    "notification-center": {
+        "read": "Прочитано"
     }
 }

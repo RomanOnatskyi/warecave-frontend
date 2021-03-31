@@ -3,6 +3,7 @@ import { PremisesComponent } from './premises/premises.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
     declarations: [
@@ -12,6 +13,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
         CommonModule,
         FormsModule,
         NgSelectModule,
+        TranslateModule,
     ],
 })
 export class PremisesModule {}

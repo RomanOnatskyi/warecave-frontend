@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { SignInUser, SignUpUser } from '../../users';
 import { UserRole } from '../../../../../app-state.service';
+import { TranslateService } from '@ngx-translate/core';
 
 export type AuthAction = "sign-up" | "sign-in";
 
@@ -26,17 +27,27 @@ export class AuthContentComponent implements OnInit {
     get signUp() { return this.action == "sign-up"; }
     get signIn() { return this.action == "sign-in"; }
 
-    constructor() {}
+    constructor(
+        private translate: TranslateService
+    ) {}
 
     ngOnInit() {
 
         if (this.user instanceof SignUpUser) {
             this.user.roleId = UserRole.Entrepreneur;
         }
+
+        this.translate.get('authorization.users.entrepreneur').subscribe((res: string) => {
+            this.users[0].name = res;
+        });
+
+        this.translate.get('authorization.users.subrenter').subscribe((res: string) => {
+            this.users[1].name = res;
+        });
     }
 
     users = [
-        { name: "Підприємець", value: UserRole.Entrepreneur },
+        { name: "", value: UserRole.Entrepreneur },
         { name: "Суборендатор", value: UserRole.Subrenter },
     ];
 }

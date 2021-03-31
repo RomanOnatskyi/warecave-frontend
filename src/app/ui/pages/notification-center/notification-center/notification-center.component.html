@@ -16,7 +16,7 @@
 
                     <button (click)="markNotificationAsRead(notification.id)"
                         class="mark-as-read-button"
-                        [disabled]="notification.isRead">Прочитано
+                        [disabled]="notification.isRead">{{ 'notification-center.read' | translate }}
                     </button>
             </div>
         </div>

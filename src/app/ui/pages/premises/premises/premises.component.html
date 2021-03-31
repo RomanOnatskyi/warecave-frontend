@@ -1,10 +1,10 @@
 <div class="page-content">
-    <h1>Ваші приміщення</h1>
+    <h1>{{ 'premises.header' | translate }}</h1>
 
     <div>
         <button type="button"
             class="btn btn-default"
-            (click)="addPremise()">Додати приміщення
+            (click)="addPremise()">{{ 'premises.button.add-premise' | translate }}
         </button>
     </div>
 
@@ -12,17 +12,15 @@
         <table class="table table-striped">
             <thead class="table-header">
                 <tr>
-                    <td>Ідентифікатор</td>
-                    <td>Назва</td>
-                    <td>Площа</td>
-                    <td>Адреса</td>
-                    <td>Вартість оденди, грн</td>
-                    <td>Суборендатор</td>
-                    <td>Коментар</td>
-                    <td>Температура</td>
-                    <td>Вологість</td>
-                    <td>Вологість</td>
-                    <td>Вологість</td>
+                    <td>{{ 'premises.label.id' | translate }}</td>
+                    <td>{{ 'premises.label.name' | translate }}</td>
+                    <td>{{ 'premises.label.area' | translate }}</td>
+                    <td>{{ 'premises.label.address' | translate }}</td>
+                    <td>{{ 'premises.label.rent' | translate }}</td>
+                    <td>{{ 'premises.label.subrenter' | translate }}</td>
+                    <td>{{ 'premises.label.annotation' | translate }}</td>
+                    <td>{{ 'premises.label.temperature' | translate }}</td>
+                    <td>{{ 'premises.label.humidity' | translate }}</td>
                     <td></td>
                 </tr>
             </thead>
@@ -41,18 +39,16 @@
                         <td>{{ premise.annotation || "–" }}</td>
                         <td>{{ premise.temperature || "–" }}</td>
                         <td>{{ premise.relativeHumidity || "–" }}</td>
-                        <td>{{ premise.relativeHumidity || "–" }}</td>
-                        <td>{{ premise.relativeHumidity || "–" }}</td>
 
                         <td class="buttons">
                             <button type="button"
                                 class="btn btn-default"
-                                (click)="editPremise(premise)">Змінити
+                                (click)="editPremise(premise)">{{ 'common.edit' | translate }}
                             </button>
 
                             <button type="button"
                                 class="btn btn-danger delete-button"
-                                (click)="deletePremise(premise.premiseId)">Видалити
+                                (click)="deletePremise(premise.premiseId)">{{ 'common.delete' | translate }}
                             </button>
                         </td>
                     </ng-template>
@@ -111,12 +107,12 @@
                         <td class="buttons">
                             <button type="button"
                                 class="btn btn-success"
-                                (click)="savePremise()">Зберегти
+                                (click)="savePremise()">{{ 'common.save' | translate }}
                             </button>
 
                             <button type="button"
                                 class="btn btn-warning delete-button"
-                                (click)="cancel()">Скасувати
+                                (click)="cancel()">{{ 'common.cancel' | translate }}
                             </button>
                         </td>
                     </ng-template>

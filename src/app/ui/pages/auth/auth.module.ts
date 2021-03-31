@@ -5,12 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthContentComponent } from './components/content/auth-content.component';
 import { SignUpComponent } from './components/sign-up.component';
 import { SignInComponent } from './components/sign-in.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         HttpClientModule,
+        TranslateModule,
     ],
     declarations: [
         AuthContentComponent,

@@ -2,7 +2,7 @@
     <div class="user-content">
 
         <div class="user-list-header base-container">
-            Користувачі
+            {{ 'user-list.header' | translate }}
         </div>
 
         <div *ngFor="let user of users"
@@ -12,7 +12,7 @@
                 <div class="user-con-1">
                     <div class="user-text">
                         <div class="user-password">
-                            Логін:
+                            {{ 'user-list.label.login' | translate }}
                         </div>
 
                         <div class="user-tt">
@@ -22,7 +22,7 @@
 
                     <div class="user-text">
                         <div class="user-id">
-                            Ідентифікатор:
+                            {{ 'user-list.label.id' | translate }}
                         </div>
 
                         <div class="user-tt">
@@ -34,7 +34,7 @@
                 <div class="user-con-2">
                     <div class="user-text">
                         <div class="user-password">
-                            Пароль:
+                            {{ 'user-list.label.password' | translate }}
                         </div>
 
                         <div class="user-tt">
@@ -44,7 +44,7 @@
 
                     <div class="user-text">
                         <div class="user-type">
-                            Тип:
+                            {{ 'user-list.label.user-type' | translate }}
                         </div>
 
                         <div class="user-tt">
@@ -59,7 +59,7 @@
                     (click)="deleteUser(user.id)"
                     class="delete-user">
 
-                    Видалити користувача
+                    {{ 'user-list.button.delete-user' | translate }}
                 </button>
             </div>
         </div>

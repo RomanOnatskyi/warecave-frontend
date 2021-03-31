@@ -1,17 +1,17 @@
 <div class="auth-content">
     <div class="auth-header">
-        <div *ngIf="signUp">Реєстрація</div>
-        <div *ngIf="signIn">Вхід</div>
+        <div *ngIf="signUp">{{ 'authorization.header.sign-up' | translate }}</div>
+        <div *ngIf="signIn">{{ 'authorization.header.sign-in' | translate }}</div>
     </div>
 
     <div *ngIf="authError"
         class="errors">
-        <div>Помилка!</div>
+        <div>{{ 'common.error' | translate }}</div>
         <div class="errors-text">{{ authError }}</div>
 
         <button class="errors-button"
             type="button"
-            (click)="dismissAuthError.emit()">Ок
+            (click)="dismissAuthError.emit()">{{ 'common.ok' | translate }}Ок
         </button>
     </div>
 
@@ -20,7 +20,7 @@
         novalidate>
 
         <div class="auth-form-item">
-            <label for="login">Логін</label>
+            <label for="login">{{ 'authorization.label.login' | translate }}</label>
             <input type="text"
                 #login="ngModel"
                 id="login"
@@ -31,13 +31,13 @@
 
             <div *ngIf="login.invalid && (login.dirty || login.touched)"
                 class="validation-warning">
-                <div *ngIf="login.errors.required">Заповніть це поле!</div>
-                <div *ngIf="login.errors.pattern">Перших 3 символа літери. Максимум 20 символів. Тільки літери та цифри.</div>
+                <div *ngIf="login.errors.required">{{ 'common.field-required' | translate }}</div>
+                <div *ngIf="login.errors.pattern">{{ 'authorization.validation.login' | translate }}</div>
             </div>
         </div>
 
         <div class="auth-form-item">
-            <label for="password">Пароль</label>
+            <label for="password">{{ 'authorization.label.password' | translate }}</label>
             <input type="password"
                 #password="ngModel"
                 id="password"
@@ -48,14 +48,14 @@
 
             <div *ngIf="password.invalid && (password.dirty || password.touched)"
                 class="validation-warning">
-                <div *ngIf="password.errors.required">Заповніть це поле!</div>
-                <div *ngIf="password.errors.pattern">Пароль має містити мінімум 6 латинських літер, одну велику літеру та цифру</div>
+                <div *ngIf="password.errors.required">{{ 'common.field-required' | translate }}</div>
+                <div *ngIf="password.errors.pattern">{{ 'authorization.validation.password' | translate }}</div>
             </div>
         </div>
 
         <div *ngIf="signUp"
             class="auth-form-item">
-            <label for="password-check">Повторіть пароль</label>
+            <label for="password-check">{{ 'authorization.label.repeat-password' | translate }}</label>
             <input type="password"
                 #passwordCheck="ngModel"
                 id="password-check"
@@ -66,15 +66,15 @@
 
             <div *ngIf="passwordCheck.invalid && (passwordCheck.dirty || passwordCheck.touched)"
                 class="validation-warning">
-                <div *ngIf="passwordCheck.errors.required">Заповніть це поле!</div>
-                <div *ngIf="passwordCheck.errors.pattern">Паролі не співпадають</div>
+                <div *ngIf="passwordCheck.errors.required">{{ 'common.field-required' | translate }}</div>
+                <div *ngIf="passwordCheck.errors.pattern">{{ 'authorization.validation.repeat-password' | translate }}</div>
             </div>
         </div>
 
         <div *ngIf="signUp"
             class="auth-form-item">
 
-            <label for="role">Тип користувача</label>
+            <label for="role">{{ 'authorization.label.user-type' | translate }}</label>
             <select type="text"
                 id="role"
                 name="role"
@@ -95,9 +95,9 @@
                 [disabled]="form.invalid || processing"
                 (click)="submit.emit()">
 
-                <span *ngIf="processing">Обробка..</span>
-                <span *ngIf="!processing && signUp">Зареєструвати</span>
-                <span *ngIf="!processing && signIn">Увійти</span>
+                <span *ngIf="processing">{{ 'common.processing' | translate }}</span>
+                <span *ngIf="!processing && signUp">{{ 'authorization.button.registration' | translate }}</span>
+                <span *ngIf="!processing && signIn">{{ 'authorization.button.authorization' | translate }}</span>
             </button>
         </div>
     </form>

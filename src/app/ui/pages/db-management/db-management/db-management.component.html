@@ -1,10 +1,10 @@
 <div class="page-content">
-    <h1>Резервні копії бази даних</h1>
+    <h1>{{ 'db-management.header' | translate }}</h1>
 
     <div>
         <button type="button"
             class="btn btn-default"
-            (click)="createBackup()">Створити резервну копію
+            (click)="createBackup()">{{ 'db-management.button.create-backup' | translate }}
         </button>
     </div>
 
@@ -12,11 +12,11 @@
         <table class="table table-striped">
             <thead class="table-header">
                 <tr>
-                    <td>Дата</td>
-                    <td>Модель відновлення</td>
-                    <td>Створивший користувач</td>
-                    <td>Розмір копії, байт</td>
-                    <td>Пошкоджено</td>
+                    <td>{{ 'db-management.label.date' | translate }}</td>
+                    <td>{{ 'db-management.label.recovery-model' | translate }}</td>
+                    <td>{{ 'db-management.label.user' | translate }}</td>
+                    <td>{{ 'db-management.label.size' | translate }}</td>
+                    <td>{{ 'db-management.label.is-damaged' | translate }}</td>
                     <td></td>
                 </tr>
             </thead>
@@ -39,7 +39,7 @@
                     <td class="restoring-button">
                         <button type="button"
                             class="btn btn-danger"
-                            (click)="restoreDatabase(backup.backupId)">Відновити базу даних
+                            (click)="restoreDatabase(backup.backupId)">{{ 'db-management.button.restore-db' | translate }}
                         </button>
                     </td>
                 </tr>
