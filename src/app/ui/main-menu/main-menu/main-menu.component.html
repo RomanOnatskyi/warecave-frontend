@@ -79,6 +79,14 @@
             </button>
         </div>
 
+        <div>
+            <button class="authorization-menu-button"
+                (click)="setLocale()">
+
+                <a class="authorization-items">{{ 'common.language' | translate }}</a>
+            </button>
+        </div>
+
         <div *ngIf="currentUser != userRole.Unauthorized">
 
             <button class="authorization-menu-button"

@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { AppStateService, Pages, UserRole } from '../../../app-state.service';
 import { DOCUMENT } from '@angular/common';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-main-menu',
@@ -13,6 +14,7 @@ export class MainMenuComponent {
     constructor(
         public appStateService: AppStateService,
         private router: Router,
+        private translate: TranslateService,
         @Inject(DOCUMENT) private _document: Document,
     ) {
     }
@@ -32,5 +34,14 @@ export class MainMenuComponent {
         this.router.navigateByUrl('auth/sign-in').then(r => {
             this._document.defaultView.location.reload();
         });
+    }
+
+    setLocale() {
+        if (this.translate.currentLang === 'ua') {
+            this.translate.use('en')
+        }
+        else {
+            this.translate.use('ua')
+        }
     }
 }
