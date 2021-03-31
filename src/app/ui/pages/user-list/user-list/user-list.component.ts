@@ -21,8 +21,8 @@ export class UserListComponent implements OnInit {
 
     users: User[];
     userTypes = {
-        [UserRole.Analyst]: "Аналітик",
-        [UserRole.StoreAdmin]: "Адміністратор магазину",
+        [UserRole.Entrepreneur]: "Підприємець",
+        [UserRole.Subrenter]: "Суборендатор",
     };
 
     private async getAllUsers() {

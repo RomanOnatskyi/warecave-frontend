@@ -26,10 +26,11 @@ export enum UserRole {
     Unauthorized = 0,
     Admin = 1,
     Entrepreneur = 2,
+    Subrenter = 3,
 
-    StoreAdmin = 3,
-    SystemAdmin = 3,
-    Analyst = 3,
+    StoreAdmin = 4,
+    SystemAdmin = 5,
+    Analyst = 6,
 }
 
 export enum Pages {
