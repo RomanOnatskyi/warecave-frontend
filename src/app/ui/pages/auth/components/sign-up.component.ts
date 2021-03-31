@@ -31,9 +31,7 @@ export class SignUpComponent {
     pages = Pages;
 
     submit() {
-
         this.processing = true;
-        this.user.storeId = this.appStateService.appState.renterId;
 
         this.authService.signUp(this.user)
             .subscribe(response => this.handleAuthResponse(response));

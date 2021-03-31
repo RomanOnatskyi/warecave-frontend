@@ -31,12 +31,12 @@ export class AuthContentComponent implements OnInit {
     ngOnInit() {
 
         if (this.user instanceof SignUpUser) {
-            this.user.userRole = UserRole.Analyst;
+            this.user.roleId = UserRole.Entrepreneur;
         }
     }
 
     users = [
-        { name: "Адміністратор магазину", value: UserRole.StoreAdmin },
-        { name: "Аналітик", value: UserRole.Analyst },
+        { name: "Підприємець", value: UserRole.Entrepreneur },
+        { name: "Суборендатор", value: UserRole.Subrenter },
     ];
 }

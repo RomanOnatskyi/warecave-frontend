@@ -8,6 +8,5 @@ export class SignInUser {
 export class SignUpUser {
     login: string;
     password: string;
-    storeId: number;
-    userRole: UserRole;
+    roleId: UserRole;
 }
