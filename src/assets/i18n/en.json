@@ -1,0 +1,46 @@
+{
+    "button": {
+        "auth": {
+            "authorization": "Sign in",
+            "registration": "Sign up"
+        },
+        "premiseEditing": {
+            "edit": "Edit",
+            "save": "Save"
+        },
+        "cancel": "Cancel"
+    },
+    "navigation": {
+        "premises": "Premises",
+        "history": "History"
+    },
+    "label": {
+        "auth": {
+            "login": "Login",
+            "password": "Password"
+        },
+        "premiseCreation": {
+            "name": "Name",
+            "area": "Area",
+            "address": "Address",
+            "subrentAmount": "Subrent amount",
+            "subrenter": "Subrenter",
+            "annotation": "Annotation"
+        }
+    },
+    "validation": {
+        "required": "You must fill ths field out",
+        "registration": {
+            "login": "The first 3 characters must be letters. Max 20 characters. Letters and digits only",
+            "password": "The password must contain at least 6 characters, one capital letter and a digit"
+        },
+        "premise": {
+            "name": "",
+            "area": "",
+            "address": "",
+            "subrentAmount": "",
+            "subrenter": "",
+            "annotation": ""
+        }
+    }
+}

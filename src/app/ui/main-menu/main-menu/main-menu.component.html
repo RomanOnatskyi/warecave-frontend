@@ -7,7 +7,7 @@
             (click)="appStateService.appState.currentPage = pages.Premises"
             routerLink="/premises">
 
-            <a>Складські приміщення</a>
+            <a>{{ 'navigation.premises' | translate }}</a>
         </button>
 
         <button *ngIf="currentUser == userRole.Entrepreneur"
@@ -25,7 +25,7 @@
             (click)="appStateService.appState.currentPage = pages.UserList"
             routerLink="/user-list">
 
-            <a>Список користувачів</a>
+            <a>{{ 'navigation.user-list' | translate }}</a>
         </button>
 
         <button *ngIf="currentUser == userRole.Admin"
@@ -34,7 +34,7 @@
             (click)="appStateService.appState.currentPage = pages.Registration"
             routerLink="/auth/sign-up">
 
-            <a>Реєстрація користувача</a>
+            <a>{{ 'navigation.registration' | translate }}</a>
         </button>
 
         <button *ngIf="currentUser == userRole.Admin"
@@ -43,11 +43,11 @@
             (click)="appStateService.appState.currentPage = pages.DbManagement"
             routerLink="/db-management">
 
-            <a>Управління базою даних</a>
+            <a>{{ 'navigation.db-management' | translate }}</a>
         </button>
 
         <button class="main-menu-button">
-            <a>Як користуватися</a>
+            <a>{{ 'navigation.howto' | translate }}</a>
         </button>
     </div>
 
@@ -59,7 +59,7 @@
                 (click)="appStateService.appState.currentPage = pages.NotificationCenter"
                 routerLink="/notification-center">
 
-                <a class="authorization-items">Повідомлення
+                <a class="authorization-items">{{ 'navigation.notifications' | translate }}
                     <span *ngIf="appStateService.appState.hasUnreadNotifications"
                         class="label label-info">
                         new
@@ -75,7 +75,7 @@
                 (click)="appStateService.appState.currentPage = pages.Authentication"
                 routerLink="/auth/sign-in">
 
-                <a class="authorization-items">Вхід</a>
+                <a class="authorization-items">{{ 'navigation.sign-in' | translate }}</a>
             </button>
         </div>
 
@@ -84,7 +84,7 @@
             <button class="authorization-menu-button"
                 (click)="refreshPage()">
 
-                <a class="authorization-items">Вийти</a>
+                <a class="authorization-items">{{ 'navigation.sign-out' | translate }}</a>
             </button>
         </div>
     </div>

@@ -1,0 +1,52 @@
+{
+    "button": {
+        "auth": {
+            "authorization": "Вхід",
+            "registration": "Зареєструватися"
+        },
+        "premiseEditing": {
+            "edit": "Редагувати",
+            "save": "Зберегти"
+        },
+        "cancel": "Скасувати"
+    },
+    "navigation": {
+        "premises": "Складські приміщення",
+        "user-list": "Список користувачів",
+        "registration": "Реєстрація користувача",
+        "db-management": "Управління базою даних",
+        "howto": "Як користуватися",
+        "notifications": "Повідомлення",
+        "sign-in": "Вхід",
+        "sign-out": "Вийти"
+    },
+    "label": {
+        "auth": {
+            "login": "Логін",
+            "password": "Пароль"
+        },
+        "premiseCreation": {
+            "name": "Назва",
+            "area": "Площа",
+            "address": "Адреса",
+            "subrentAmount": "Вартість суборенди",
+            "subrenter": "Суборендатор",
+            "annotation": "Коментар"
+        }
+    },
+    "validation": {
+        "required": "Заповніть поле!",
+        "registration": {
+            "login": "Перших 3 символа літери. Максимум 20 символів. Тільки літери та цифри.",
+            "password": "Пароль має містити мінімум 6 латинських літер, одну велику літеру та цифру"
+        },
+        "premise": {
+            "name": "",
+            "area": "",
+            "address": "",
+            "subrentAmount": "",
+            "subrenter": "",
+            "annotation": ""
+        }
+    }
+}

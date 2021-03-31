@@ -20,6 +20,8 @@
     "@angular/platform-browser-dynamic": "~11.0.4",
     "@angular/router": "~11.0.4",
     "@ng-select/ng-select": "^6.1.0",
+    "@ngx-translate/core": "^13.0.0",
+    "@ngx-translate/http-loader": "^6.0.0",
     "chart.js": "^2.9.4",
     "linq": "^3.2.3",
     "moment": "^2.29.1",
