@@ -39,14 +39,14 @@ footer {
     font-size: 9pt;
 }
 
-.ot{
-    margin-left: 5em;
-}
-
 .footer-logo {
     align-items: flex-end;
     width: 100%;
     margin-right: 100px;
     font-size: 16pt;
     font-family: "Eras Medium ITC", Arial, sans-serif;
+}
+
+.footer-logo img {
+    height: 35%;
 }

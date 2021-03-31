@@ -1,5 +1,5 @@
 <div class="page-content">
-    <h1>Список товарів</h1>
+    <h1>Ваші приміщення</h1>
 
     <div>
         <button type="button"
@@ -11,18 +11,20 @@
     <div class="products-table">
         <table class="table table-striped">
             <thead class="table-header">
-            <tr>
-                <td>Ідентифікатор</td>
-                <td>Назва</td>
-                <td>Площа</td>
-                <td>Адреса</td>
-                <td>Вартість оденди, грн</td>
-                <td>Суборендатор</td>
-                <td>Коментар</td>
-                <td>Температура</td>
-                <td>Вологість</td>
-                <td></td>
-            </tr>
+                <tr>
+                    <td>Ідентифікатор</td>
+                    <td>Назва</td>
+                    <td>Площа</td>
+                    <td>Адреса</td>
+                    <td>Вартість оденди, грн</td>
+                    <td>Суборендатор</td>
+                    <td>Коментар</td>
+                    <td>Температура</td>
+                    <td>Вологість</td>
+                    <td>Вологість</td>
+                    <td>Вологість</td>
+                    <td></td>
+                </tr>
             </thead>
 
             <tbody>
@@ -38,6 +40,8 @@
                         <td>{{ premise.subrenterLogin || "–" }}</td>
                         <td>{{ premise.annotation || "–" }}</td>
                         <td>{{ premise.temperature || "–" }}</td>
+                        <td>{{ premise.relativeHumidity || "–" }}</td>
+                        <td>{{ premise.relativeHumidity || "–" }}</td>
                         <td>{{ premise.relativeHumidity || "–" }}</td>
 
                         <td class="buttons">
