@@ -36,7 +36,7 @@ export class MainMenuComponent {
         });
     }
 
-    setLocale() {
+    switchLocale() {
         if (this.translate.currentLang === 'ua') {
             this.translate.use('en')
         }

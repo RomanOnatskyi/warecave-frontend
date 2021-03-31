@@ -8,7 +8,7 @@
     padding: 0 52px;
 }
 
-.products-table {
+.premises-table {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -24,6 +24,6 @@
     justify-content: flex-end;
 }
 
-.delete-button {
+.buttons button {
     margin-left: 10px;
 }

@@ -8,7 +8,7 @@
         </button>
     </div>
 
-    <div class="products-table">
+    <div class="premises-table">
         <table class="table table-striped">
             <thead class="table-header">
                 <tr>
@@ -21,6 +21,8 @@
                     <td>{{ 'premises.label.annotation' | translate }}</td>
                     <td>{{ 'premises.label.temperature' | translate }}</td>
                     <td>{{ 'premises.label.humidity' | translate }}</td>
+                    <td>{{ 'premises.label.rent-notification' | translate }}</td>
+                    <td>{{ 'premises.label.communal-notification' | translate }}</td>
                     <td></td>
                 </tr>
             </thead>
@@ -38,6 +40,8 @@
                         <td>{{ premise.subrenterLogin || "–" }}</td>
                         <td>{{ premise.annotation || "–" }}</td>
                         <td>{{ premise.temperature || "–" }}</td>
+                        <td>{{ premise.relativeHumidity || "–" }}</td>
+                        <td>{{ premise.relativeHumidity || "–" }}</td>
                         <td>{{ premise.relativeHumidity || "–" }}</td>
 
                         <td class="buttons">
