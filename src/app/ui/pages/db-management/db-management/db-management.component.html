@@ -32,7 +32,8 @@
                     <td>{{ backup.user || "–" }}</td>
                     <td>{{ backup.backupSize || "–" }}</td>
                     <td>
-                        {{ backup.isDamaged ? 'Так' : 'Ні'
+                        {{ backup.isDamaged ? ('common.yes' | translate)
+                           : ('common.no' | translate)
                            || "–"
                         }}
                     </td>

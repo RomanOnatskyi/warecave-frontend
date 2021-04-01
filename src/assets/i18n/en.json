@@ -1,46 +1,116 @@
 {
-    "button": {
-        "auth": {
-            "authorization": "Sign in",
-            "registration": "Sign up"
-        },
-        "premiseEditing": {
-            "edit": "Edit",
-            "save": "Save"
-        },
-        "cancel": "Cancel"
+    "common": {
+        "ok": "Ок",
+        "error": "Error!",
+        "field-required": "Fill this field out",
+        "processing": "Processing..",
+        "edit": "Edit",
+        "delete": "Delete",
+        "save": "Save",
+        "cancel": "Cancel",
+        "language": "UA/EN",
+        "yes": "Yes",
+        "no": "No"
     },
     "navigation": {
         "premises": "Premises",
-        "history": "History"
+        "user-list": "User list",
+        "registration": "User creating",
+        "db-management": "Database management",
+        "howto": "How to",
+        "notifications": "Notifications",
+        "rent-chart": "Rent chart",
+        "sign-in": "Log in",
+        "sign-out": "Log out"
     },
-    "label": {
-        "auth": {
-            "login": "Login",
-            "password": "Password"
+    "footer": {
+        "contacts": "Contacts",
+        "applications": "Applications",
+        "rights-reserved": "all rights reserved"
+    },
+    "authorization": {
+        "header": {
+            "sign-up": "Registration",
+            "sign-in": "Log in"
         },
-        "premiseCreation": {
+        "label": {
+            "login": "Login",
+            "password": "Password",
+            "repeat-password": "Enter password again",
+            "user-type": "User type"
+        },
+        "validation": {
+            "login": "The first 3 characters must be letters. Max 20 characters. Letters and digits only",
+            "password": "The password must contain at least 6 characters, one capital letter and a digit",
+            "repeat-password": "Password doesn't match"
+        },
+        "button": {
+            "registration": "Sign up",
+            "authorization": "Log in"
+        },
+        "users": {
+            "entrepreneur": "Entrepreneur",
+            "subrenter": "Subrenter"
+        }
+    },
+    "premises": {
+        "header": "Your premises",
+        "label": {
+            "id": "Identifier",
             "name": "Name",
             "area": "Area",
             "address": "Address",
-            "subrentAmount": "Subrent amount",
+            "rent": "Rent amount",
             "subrenter": "Subrenter",
-            "annotation": "Annotation"
+            "annotation": "Annotation",
+            "temperature": "Temperature",
+            "humidity": "Humidity",
+            "rent-notification": "Rent notifying day",
+            "communal-notification": "Communal notifying day"
+        },
+        "button": {
+            "add-premise": "New premise"
+        },
+        "users": {
+            "entrepreneur": "Entrepreneur",
+            "subrenter": "Subrenter"
         }
     },
-    "validation": {
-        "required": "You must fill ths field out",
-        "registration": {
-            "login": "The first 3 characters must be letters. Max 20 characters. Letters and digits only",
-            "password": "The password must contain at least 6 characters, one capital letter and a digit"
+    "rent-chart": {
+        "header": "Weekly rent amount dynamics",
+        "chart-label": "Total rent amount"
+    },
+    "db-management": {
+        "header": "Database backups",
+        "label": {
+            "date": "Date",
+            "recovery-model": "Recovery model",
+            "user": "Creator",
+            "size": "Backup size, bytes",
+            "is-damaged": "Damaged"
         },
-        "premise": {
-            "name": "",
-            "area": "",
-            "address": "",
-            "subrentAmount": "",
-            "subrenter": "",
-            "annotation": ""
+        "button": {
+            "create-backup": "Create backup",
+            "restore-db": "Restore database"
         }
+    },
+    "user-list": {
+        "header": "Users",
+        "label": {
+            "login": "Login:",
+            "id": "Identifier:",
+            "password": "Password:",
+            "user-type": "Type:"
+        },
+        "button": {
+            "delete-user": "Delete user"
+        },
+        "users": {
+            "entrepreneur": "Entrepreneur",
+            "subrenter": "Subrenter"
+        }
+    },
+    "notification-center": {
+        "read": "Read"
     }
 }

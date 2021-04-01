@@ -12,6 +12,9 @@ export class Premise {
         annotation: string,
         temperature: number,
         relativeHumidity: number,
+
+        rentDay: number,
+        communalDay: number,
     ) {
         this.premiseId = premiseId;
         this.name = name;
@@ -22,6 +25,8 @@ export class Premise {
         this.subrenterId = subrenterId;
         this.temperature = temperature;
         this.relativeHumidity = relativeHumidity;
+        this.rentDay = rentDay;
+        this.communalDay = communalDay;
     }
 
     premiseId: number;

@@ -1,3 +1,4 @@
+import * as E from 'linq';
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { PremisesService } from '../premises.service';
 import { AppStateService } from '../../../../app-state.service';
@@ -31,9 +32,6 @@ export class PremisesComponent implements OnInit {
         this.premises = await this.loadPremises();
         this.subrenters = await this.loadSubrenters();
         this.notificationData = await this.loadNotificationData();
-        console.log("this.notificationData:", this.notificationData);
-
-        // todo linq here, add notificationId функция поиска уведомления по айди и байнд в хтмл
     }
 
     get appState() { return this.appStateService.appState; }
@@ -68,6 +66,8 @@ export class PremisesComponent implements OnInit {
             null,
             null,
             null,
+            null,
+            null,
         );
 
         this.premises.push(this.editedPremise);
@@ -85,12 +85,21 @@ export class PremisesComponent implements OnInit {
             premise.annotation,
             premise.temperature,
             premise.relativeHumidity,
+            this.findNotificationData(premise.premiseId, 1) || null,
+            this.findNotificationData(premise.premiseId, 2) || null
         );
     }
 
     isEditMode(premise: Premise) {
 
         return this.editedPremise && this.editedPremise.premiseId === premise.premiseId;
+    }
+
+    findNotificationData(premiseId: number, notificationType: number) {
+        return E.from(this.notificationData)
+            .where(i => i.premiseId == premiseId && i.typeId == notificationType)
+            .select(i => i.sendingDay)
+            .toArray()[0]
     }
 
     async savePremise() {

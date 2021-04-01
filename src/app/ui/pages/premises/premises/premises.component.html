@@ -41,8 +41,8 @@
                         <td>{{ premise.annotation || "–" }}</td>
                         <td>{{ premise.temperature || "–" }}</td>
                         <td>{{ premise.relativeHumidity || "–" }}</td>
-                        <td>{{ premise.relativeHumidity || "–" }}</td>
-                        <td>{{ premise.relativeHumidity || "–" }}</td>
+                        <td>{{ findNotificationData(premise.premiseId, 1) || "–" }}</td>
+                        <td>{{ findNotificationData(premise.premiseId, 2) || "–" }}</td>
 
                         <td class="buttons">
                             <button type="button"
