@@ -23,7 +23,7 @@ export class DbManagementComponent implements OnInit {
     async ngOnInit() {
 
         this.dbBackupsData = await this.loadDbBackups();
-        this.translate.get('db-management.db-restored').subscribe((res: string) => {
+        this.translate.stream('db-management.db-restored').subscribe((res: string) => {
             this.message = res;
         });
     }

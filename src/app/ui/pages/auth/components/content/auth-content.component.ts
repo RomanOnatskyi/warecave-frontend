@@ -37,11 +37,11 @@ export class AuthContentComponent implements OnInit {
             this.user.roleId = UserRole.Entrepreneur;
         }
 
-        this.translate.get('authorization.users.entrepreneur').subscribe((res: string) => {
+        this.translate.stream('authorization.users.entrepreneur').subscribe((res: string) => {
             this.users[0].name = res;
         });
 
-        this.translate.get('authorization.users.subrenter').subscribe((res: string) => {
+        this.translate.stream('authorization.users.subrenter').subscribe((res: string) => {
             this.users[1].name = res;
         });
     }
