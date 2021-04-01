@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SellsChartComponent } from './sells-chart/sells-chart.component';
+import { RentChartComponent } from './rent-chart/rent-chart.component';
 import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
-    declarations: [SellsChartComponent],
+    declarations: [RentChartComponent],
     imports: [
         CommonModule,
         FormsModule,
     ],
 })
-export class SellsChartModule {
+export class RentChartModule {
 }

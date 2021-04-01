@@ -3,13 +3,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AppStateService } from '../../../app-state.service';
 import { catchError } from 'rxjs/operators';
 import { HandleError } from '../../../handle-error';
-import { SellsChartResponse } from '../../../responses/sells-chart-response';
-import { DataForGettingStatistics } from './request';
+import { RentChartResponse } from '../../../responses/rent-chart-response';
 
 @Injectable({
     providedIn: 'root',
 })
-export class SellsChartService {
+export class RentChartService {
 
     constructor(
         private http: HttpClient,
@@ -19,12 +18,12 @@ export class SellsChartService {
 
     get appState() { return this.appStateService.appState; }
 
-    getDataForChart(data: DataForGettingStatistics) {
+    getDataForChart() {
 
         const headers = new HttpHeaders({ 'authorization': this.appState.userToken });
 
-        return this.http.post<SellsChartResponse>(`${this.appState.baseUrl}/good/statistics/sales/`, data, { headers }).pipe(
-            catchError(HandleError<SellsChartResponse>('Getting data for chart')),
+        return this.http.get<RentChartResponse>(`${this.appState.baseUrl}/statistics/rent/${this.appState.renterId}`, { headers }).pipe(
+            catchError(HandleError<RentChartResponse>('Getting data for chart')),
         );
     }
 }

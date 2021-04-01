@@ -13,7 +13,7 @@ import { FooterModule } from './ui/footer/footer.module';
 import { MainModule } from './ui/pages/main/main.module';
 import { AuthModule } from './ui/pages/auth/auth.module';
 import { MainMenuModule } from './ui/main-menu/main-menu.module';
-import { SellsChartModule } from './ui/pages/sells-chart/sells-chart.module';
+import { RentChartModule } from './ui/pages/rent-chart/rent-chart.module';
 import { PremisesModule } from './ui/pages/premises/premises.module';
 import { NotificationCenterModule } from './ui/pages/notification-center/notification-center.module';
 import { UserListModule } from './ui/pages/user-list/user-list.module';
@@ -48,7 +48,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 
         AuthModule,
         MainMenuModule,
-        SellsChartModule,
+        RentChartModule,
         PremisesModule,
         NotificationCenterModule,
         UserListModule,

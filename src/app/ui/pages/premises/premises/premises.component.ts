@@ -33,7 +33,7 @@ export class PremisesComponent implements OnInit {
         this.notificationData = await this.loadNotificationData();
         console.log("this.notificationData:", this.notificationData);
 
-        // todo linq here
+        // todo linq here, add notificationId функция поиска уведомления по айди и байнд в хтмл
     }
 
     get appState() { return this.appStateService.appState; }
