@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DbManagementService } from '../db-management.service';
 import { AppStateService } from '../../../../app-state.service';
 import { BackupData } from '../../../../responses/db-backups-response';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-db-management',
@@ -11,15 +12,20 @@ import { BackupData } from '../../../../responses/db-backups-response';
 export class DbManagementComponent implements OnInit {
 
     dbBackupsData: BackupData[];
+    message: string;
 
     constructor(
         private appStateService: AppStateService,
         private dbManagementService: DbManagementService,
+        private translate: TranslateService,
     ) {}
 
     async ngOnInit() {
 
         this.dbBackupsData = await this.loadDbBackups();
+        this.translate.get('db-management.db-restored').subscribe((res: string) => {
+            this.message = res;
+        });
     }
 
     private async loadDbBackups() {

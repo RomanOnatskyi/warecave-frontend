@@ -92,7 +92,8 @@
         "button": {
             "create-backup": "Create backup",
             "restore-db": "Restore database"
-        }
+        },
+        "db-restored": "Database restored"
     },
     "user-list": {
         "header": "Users",

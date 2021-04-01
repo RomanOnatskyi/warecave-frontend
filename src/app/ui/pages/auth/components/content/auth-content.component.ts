@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { SignInUser, SignUpUser } from '../../users';
 import { UserRole } from '../../../../../app-state.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, TranslationChangeEvent } from '@ngx-translate/core';
 
 export type AuthAction = "sign-up" | "sign-in";
 
@@ -48,6 +48,6 @@ export class AuthContentComponent implements OnInit {
 
     users = [
         { name: "", value: UserRole.Entrepreneur },
-        { name: "Суборендатор", value: UserRole.Subrenter },
+        { name: "", value: UserRole.Subrenter },
     ];
 }
