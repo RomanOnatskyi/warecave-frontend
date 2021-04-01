@@ -28,7 +28,7 @@ export class AuthContentComponent implements OnInit {
     get signIn() { return this.action == "sign-in"; }
 
     constructor(
-        private translate: TranslateService
+        private translate: TranslateService,
     ) {}
 
     ngOnInit() {

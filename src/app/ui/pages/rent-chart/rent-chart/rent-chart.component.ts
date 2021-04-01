@@ -5,6 +5,7 @@ import { Chart } from 'chart.js';
 import { RentChartService } from '../rent-chart.service';
 import { ChartData } from '../../../../responses/rent-chart-response';
 import { AppStateService } from '../../../../app-state.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-sells-chart',
@@ -16,14 +17,20 @@ export class RentChartComponent implements OnInit {
     constructor(
         private appStateService: AppStateService,
         private sellsChartService: RentChartService,
+        private translate: TranslateService,
     ) {}
 
     get appState() { return this.appStateService.appState; }
 
     chartPoints: ChartData[];
     sellsChart: Chart = [];
+    chartLabel: string;
 
     async ngOnInit() {
+
+        this.translate.get('rent-chart.chart-label').subscribe((res: string) => {
+            this.chartLabel = res;
+        });
 
         this.sellsChart = this.getLineChart();
         await this.getChartData();
@@ -46,7 +53,7 @@ export class RentChartComponent implements OnInit {
                 datasets: [
                     {
                         data,
-                        label: 'Сплачено оренди',
+                        label: this.chartLabel,
                         borderColor: '#33eec9',
                         backgroundColor: '#9fa5a5',
                     }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RentChartComponent } from './rent-chart/rent-chart.component';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -9,6 +10,7 @@ import { FormsModule } from '@angular/forms';
     imports: [
         CommonModule,
         FormsModule,
+        TranslateModule,
     ],
 })
 export class RentChartModule {
