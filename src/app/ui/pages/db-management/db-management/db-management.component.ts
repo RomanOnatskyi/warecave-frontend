@@ -41,6 +41,6 @@ export class DbManagementComponent implements OnInit {
 
     async restoreDatabase(backupId: number) {
         let response = await this.dbManagementService.restoreDatabase(backupId).toPromise();
-        alert(response.errors ? response.errors : 'Базу даних відновлено')
+        alert(response.errors ? response.errors : this.message)
     }
 }
