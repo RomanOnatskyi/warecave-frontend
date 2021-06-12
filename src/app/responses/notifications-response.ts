@@ -6,7 +6,6 @@ export class Notification {
     sendingDate: string;
     text: string;
     isRead: boolean;
-    premiseId: number;
 }
 
 export class NotificationsResponse extends BaseResponse {

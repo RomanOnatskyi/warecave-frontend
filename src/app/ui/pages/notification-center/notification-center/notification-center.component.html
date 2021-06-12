@@ -16,7 +16,10 @@
 
                     <button (click)="markNotificationAsRead(notification.id)"
                         class="mark-as-read-button"
-                        [disabled]="notification.isRead">{{ 'notification-center.read' | translate }}
+                        [disabled]="notification.isRead">
+
+                        <span *ngIf="notification.isRead">{{ 'notification-center.read' | translate }}</span>
+                        <span *ngIf="!notification.isRead">{{ 'notification-center.mark-as-read' | translate }}</span>
                     </button>
             </div>
         </div>

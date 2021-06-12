@@ -112,6 +112,7 @@
         }
     },
     "notification-center": {
-        "read": "Read"
+        "read": "Read",
+        "mark-as-read": "Mark as read"
     }
 }
