@@ -30,7 +30,7 @@
     },
     "authorization": {
         "header": {
-            "sign-up": "Registration",
+            "sign-up": "Register",
             "sign-in": "Log in"
         },
         "label": {
@@ -45,7 +45,7 @@
             "repeat-password": "Password doesn't match"
         },
         "button": {
-            "registration": "Sign up",
+            "registration": "Register",
             "authorization": "Log in"
         },
         "users": {

@@ -51,7 +51,6 @@ export class PremisesComponent implements OnInit {
     private async loadSubrenters() {
 
         let response = await this.premisesService.getSubrenters().toPromise();
-
         return response.subrenters;
     }
 
@@ -131,6 +130,8 @@ export class PremisesComponent implements OnInit {
 
     deletePremise(premiseId: number) {
 
-        this.premisesService.deletePremise(premiseId).subscribe(data => this.loadPremises());
+        this.premisesService.deletePremise(premiseId).subscribe(async data => {
+            this.premises = await this.loadPremises();
+        });
     }
 }

@@ -30,7 +30,7 @@
     },
     "authorization": {
         "header": {
-            "sign-up": "Реєстрація",
+            "sign-up": "Зареєструвати",
             "sign-in": "Вхід"
         },
         "label": {
@@ -45,7 +45,7 @@
             "repeat-password": "Паролі не співпадають"
         },
         "button": {
-            "registration": "Зареєструватися",
+            "registration": "Зареєструвати",
             "authorization": "Увійти"
         },
         "users": {
