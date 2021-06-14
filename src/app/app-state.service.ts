@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { environment } from '../environments/environment';
 
 @Injectable({
     providedIn: 'root',
@@ -12,7 +13,7 @@ export class AppStateService {
 
 export class AppState {
 
-    baseUrl = "http://192.168.0.106:3300/api";
+    baseUrl = environment.apiUrl;
 
     currentUser: UserRole = UserRole.Unauthorized;
     userToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTYxNTMwOTUwMX0.-l5s_cKlmMW-4-Ncd8ZrOc1r-5JFzet-JznhidjTy-M";
