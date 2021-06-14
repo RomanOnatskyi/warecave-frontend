@@ -16,8 +16,8 @@ export class AppState {
     baseUrl = environment.apiUrl;
 
     currentUser: UserRole = UserRole.Unauthorized;
-    userToken: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTYxNTMwOTUwMX0.-l5s_cKlmMW-4-Ncd8ZrOc1r-5JFzet-JznhidjTy-M";
-    renterId: number = 1;
+    userToken: string;
+    renterId: number;
     currentPage: Pages;
     hasUnreadNotifications: boolean;
 }
@@ -28,10 +28,6 @@ export enum UserRole {
     Admin = 1,
     Entrepreneur = 2,
     Subrenter = 3,
-
-    StoreAdmin = 4,
-    SystemAdmin = 5,
-    Analyst = 6,
 }
 
 export enum Pages {
@@ -40,7 +36,7 @@ export enum Pages {
     Registration,
     Premises,
     NotificationCenter,
-    SellsChart,
+    RentChart,
     UserList,
     DbManagement,
 }

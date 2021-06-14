@@ -12,8 +12,8 @@
 
         <button *ngIf="currentUser == userRole.Entrepreneur"
             class="main-menu-button"
-            [ngClass]="{ active: currentPage == pages.SellsChart }"
-            (click)="appStateService.appState.currentPage = pages.SellsChart"
+            [ngClass]="{ active: currentPage == pages.RentChart }"
+            (click)="appStateService.appState.currentPage = pages.RentChart"
             routerLink="/rent-chart">
 
             <a>{{ 'navigation.rent-chart' | translate }}</a>
