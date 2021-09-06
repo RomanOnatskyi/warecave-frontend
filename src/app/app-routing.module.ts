@@ -7,7 +7,6 @@ import { PremisesComponent } from './ui/pages/premises/premises/premises.compone
 import { NotificationCenterComponent } from './ui/pages/notification-center/notification-center/notification-center.component';
 import { RentChartComponent } from './ui/pages/rent-chart/rent-chart/rent-chart.component';
 import { UserListComponent } from './ui/pages/user-list/user-list/user-list.component';
-import { MainComponent } from './ui/pages/main/main/main.component';
 import { DbManagementComponent } from './ui/pages/db-management/db-management/db-management.component';
 
 const routes: Routes = [
@@ -19,8 +18,8 @@ const routes: Routes = [
     { path: 'user-list', component: UserListComponent },
     { path: 'db-management', component: DbManagementComponent },
     { path: 'rent-chart', component: RentChartComponent },
-    { path: 'main', component: MainComponent },
 ];
+
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
