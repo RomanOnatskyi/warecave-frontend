@@ -6,7 +6,12 @@ Warecave – це система, що дозволяє автоматизува
 
 Також Warecave надає мобільний застосунок, який дозволяє суборендаторам керувати орендованими приміщеннями та відстежувати їх стан.
 
+## Architecture
+Система складається з наступних частин:
+- Angular client
+- Node.JS server + Microsoft SQL Server database
+- Java mobile app
+
 
 ### Use-case diagram
 ![image](https://user-images.githubusercontent.com/66105908/152804727-4730224e-f194-45df-a76a-063b888a03ab.png)
-
