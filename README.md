@@ -1,27 +1,12 @@
-# GulderFrontend
+# Warecave (frontend)
+[Video demo](https://drive.google.com/file/d/18SrsfszQiL5CcGlVvZ4vgaFlRQrrrnka/view?usp=sharing)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
+## Description
+Warecave – це система, що дозволяє автоматизувати ведення бізнесу із суборенди складських приміщень. Наприклад, вона дозволяє підприємцю управляти своїми приміщеннями та вести їх облік, а також відстежувати вчасну сплату оренди його клієнтами.
 
-## Development server
+Також Warecave надає мобільний застосунок, який дозволяє суборендаторам керувати орендованими приміщеннями та відстежувати їх стан.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+### Use-case diagram
+![image](https://user-images.githubusercontent.com/66105908/152804727-4730224e-f194-45df-a76a-063b888a03ab.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
